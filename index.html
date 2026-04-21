@@ -229,21 +229,74 @@
             display: block;
         }
 
+        /* Navigation Button Row */
+        .nav-btn-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 12px;
+        }
+
         .back-btn {
             background: transparent;
             border: 1px solid #333333;
             color: #cccccc;
-            padding: 8px 20px;
+            padding: 10px 22px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.8rem;
-            margin-bottom: 30px;
             transition: all 0.3s ease;
         }
 
         .back-btn:hover {
             border-color: #eb0a1e;
             color: #eb0a1e;
+        }
+
+        .next-btn {
+            background: #eb0a1e;
+            border: 1px solid #eb0a1e;
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .next-btn:hover {
+            background: #cc0818;
+            border-color: #cc0818;
+            transform: translateX(3px);
+        }
+
+        .next-btn.finish-btn {
+            background: transparent;
+            border: 1px solid #eb0a1e;
+            color: #eb0a1e;
+        }
+
+        .next-btn.finish-btn:hover {
+            background: #eb0a1e;
+            color: #ffffff;
+            transform: none;
+        }
+
+        /* Bottom Navigation Row */
+        .bottom-nav-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #2a2a2a;
+            gap: 12px;
         }
 
         .section-header {
@@ -527,6 +580,9 @@
             .main-container { padding: 20px 15px; }
             .welcome-banner { padding: 25px 20px; }
             .sections-grid { grid-template-columns: 1fr; }
+            .nav-btn-row { flex-direction: column; align-items: stretch; }
+            .bottom-nav-row { flex-direction: column; align-items: stretch; }
+            .next-btn, .back-btn { text-align: center; justify-content: center; }
         }
     </style>
 </head>
@@ -626,7 +682,11 @@
 
     <!-- SECTION 1: Introduction -->
     <div class="section-page" id="s1">
-        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="nav-btn-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s2')">Next: Instagram History &nbsp;→</button>
+        </div>
+
         <div class="section-header">
             <div class="sec-tag">Section 1 — Introduction</div>
             <h2>Brand Overview & Portfolio Introduction</h2>
@@ -676,11 +736,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="bottom-nav-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s2')">Next: Instagram History &nbsp;→</button>
+        </div>
     </div>
 
     <!-- SECTION 2: Instagram History -->
     <div class="section-page" id="s2">
-        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="nav-btn-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s3')">Next: Four Zones Analysis &nbsp;→</button>
+        </div>
+
         <div class="section-header">
             <div class="sec-tag">Section 2 — Social Media History</div>
             <h2>Instagram: History & Ladder of Engagement</h2>
@@ -744,11 +813,20 @@
             <p>Applying the Ladder of Engagement framework reveals that TGR's Instagram strategy is effective at attracting followers and generating passive engagement (rungs 1–3) but has not yet developed structured mechanisms to elevate users toward the producer tier (rung 5). The brand's content strategy is primarily broadcast-oriented, prioritising high-quality visual publishing over community co-creation.</p>
             <p>To maximise the ladder's potential, TGR would benefit from implementing formalised UGC campaigns, featuring community content in official channels, and introducing engagement mechanics such as challenges, competitions, and community spotlights that incentivise users to climb from passive consumption toward active content production.</p>
         </div>
+
+        <div class="bottom-nav-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s3')">Next: Four Zones Analysis &nbsp;→</button>
+        </div>
     </div>
 
     <!-- SECTION 3: Four Zones -->
     <div class="section-page" id="s3">
-        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="nav-btn-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s4')">Next: Website Evaluation &nbsp;→</button>
+        </div>
+
         <div class="section-header">
             <div class="sec-tag">Section 3 — Social Media Evaluation</div>
             <h2>Four Zones of Social Media Analysis</h2>
@@ -801,11 +879,20 @@
             <p>The social entertainment zone represents a missed opportunity for TGR. The brand has partnerships with Gran Turismo and other racing simulation titles but does not leverage these effectively on social media. Gamified engagement mechanics such as prediction challenges during race weekends could significantly increase interactive engagement.</p>
             <p>Social commerce represents the most significant gap in TGR's digital strategy. No direct purchase pathways from social content to merchandise or vehicle configurators exist. Given the demonstrated purchasing intent within enthusiast automotive communities, integrating Instagram Shopping for merchandise and linked car configurators could drive measurable commercial outcomes from the existing follower base.</p>
         </div>
+
+        <div class="bottom-nav-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s4')">Next: Website Evaluation &nbsp;→</button>
+        </div>
     </div>
 
     <!-- SECTION 4: Website Evaluation -->
     <div class="section-page" id="s4">
-        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="nav-btn-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s5')">Next: UGC Trend Analysis &nbsp;→</button>
+        </div>
+
         <div class="section-header">
             <div class="sec-tag">Section 4 — Website Evaluation</div>
             <h2>Likert Scale Website Assessment</h2>
@@ -934,11 +1021,20 @@
                 <strong>Critical Gap:</strong> The score of 2/5 for UGC integration (item 8) directly connects to the UGC trend analysis in Section 5. Featuring community content on the official website would simultaneously address the dialogic communication weakness and capitalise on the existing enthusiast content ecosystem.
             </div>
         </div>
+
+        <div class="bottom-nav-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s5')">Next: UGC Trend Analysis &nbsp;→</button>
+        </div>
     </div>
 
     <!-- SECTION 5: UGC Trend -->
     <div class="section-page" id="s5">
-        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="nav-btn-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s6')">Next: Recommendations &nbsp;→</button>
+        </div>
+
         <div class="section-header">
             <div class="sec-tag">Section 5 — Trend Analysis</div>
             <h2>User-Generated Content (UGC) Trend</h2>
@@ -986,11 +1082,20 @@
             <p>Applying this to TGR's 9.3 million Instagram followers, the model would predict approximately 93,000 active content creators — a figure that aligns with the combined hashtag volume when considered across multiple platforms and over multiple years. This suggests TGR's UGC ecosystem is performing within expected parameters for a community of its size.</p>
             <p>However, the 90-9-1 framework also highlights an opportunity: the 9% occasional contributor segment (approximately 837,000 followers) represents a vast pool of users who are engaged enough to interact but have not yet been activated as content creators. Targeted UGC campaigns and community incentivisation could convert a meaningful proportion of this segment into active producers, significantly expanding the brand's organic content volume.</p>
         </div>
+
+        <div class="bottom-nav-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s6')">Next: Recommendations &nbsp;→</button>
+        </div>
     </div>
 
     <!-- SECTION 6: Recommendations -->
     <div class="section-page" id="s6">
-        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="nav-btn-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s7')">Next: References &nbsp;→</button>
+        </div>
+
         <div class="section-header">
             <div class="sec-tag">Section 6 — Recommendations</div>
             <h2>Strategic Digital Marketing Recommendations</h2>
@@ -1028,11 +1133,20 @@
                 <li>Dedicated community management resource with commitment to responding to top comments within 24 hours</li>
             </ul>
         </div>
+
+        <div class="bottom-nav-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn" onclick="showSection('s7')">Next: References &nbsp;→</button>
+        </div>
     </div>
 
     <!-- SECTION 7: References -->
     <div class="section-page" id="s7">
-        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="nav-btn-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn finish-btn" onclick="goBack()">✓ Return to Contents</button>
+        </div>
+
         <div class="section-header">
             <div class="sec-tag">Section 7 — References</div>
             <h2>Harvard Reference List</h2>
@@ -1051,6 +1165,11 @@
             <div class="reference-item">Smith, C. (2012) 'Instagram reaches 25,000 users in one day', <em>Digital Trends,</em> 7 October. Available at: https://www.digitaltrends.com (Accessed: 1 January 2025).</div>
             <div class="reference-item">Toyota Gazoo Racing (2024) <em>Official Toyota Gazoo Racing Website.</em> Available at: https://gazooracing.com (Accessed: 1 January 2025).</div>
             <div class="reference-item">Tuten, T.L. and Solomon, M.R. (2020) <em>Social Media Marketing.</em> 4th edn. London: SAGE Publications.</div>
+        </div>
+
+        <div class="bottom-nav-row">
+            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+            <button class="next-btn finish-btn" onclick="goBack()">✓ Return to Contents</button>
         </div>
     </div>
 
