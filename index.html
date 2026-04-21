@@ -49,7 +49,6 @@
             letter-spacing: 1px;
         }
 
-        /* TOYOTA STRIPE */
         .toyota-stripe {
             height: 4px;
             background: linear-gradient(90deg, #eb0a1e, #ff4444, #eb0a1e);
@@ -61,7 +60,6 @@
             50% { opacity: 0.6; }
         }
 
-        /* INDEX CONTAINER */
         .index-container {
             max-width: 900px;
             margin: 60px auto;
@@ -85,7 +83,6 @@
             letter-spacing: 1px;
         }
 
-        /* INDEX CARDS */
         .index-grid {
             display: flex;
             flex-direction: column;
@@ -176,7 +173,7 @@
             display: none;
             max-width: 900px;
             margin: 60px auto;
-            padding: 0 20px;
+            padding: 0 20px 60px 20px;
             animation: fadeIn 0.4s ease;
         }
 
@@ -192,7 +189,7 @@
         .section-header {
             border-left: 4px solid #eb0a1e;
             padding-left: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .section-header h2 {
@@ -208,15 +205,181 @@
             margin-top: 4px;
         }
 
-        .content-placeholder {
-            background: #1a1a1a;
-            border: 1px dashed #333333;
+        /* CONTENT STYLES */
+        .content-block {
+            background: #111111;
+            border: 1px solid #222222;
             border-radius: 8px;
-            padding: 40px;
-            text-align: center;
-            color: #f0f0f0;
-            font-size: 0.9rem;
+            padding: 30px;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .content-block h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #eb0a1e;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #222222;
+        }
+
+        .content-block h4 {
+            font-size: 0.95rem;
+            color: #ffffff;
+            margin: 20px 0 10px 0;
             letter-spacing: 1px;
+        }
+
+        .content-block p {
+            font-size: 0.88rem;
+            color: #cccccc;
+            margin-bottom: 14px;
+            line-height: 1.9;
+        }
+
+        .content-block ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 14px;
+        }
+
+        .content-block ul li {
+            font-size: 0.88rem;
+            color: #cccccc;
+            padding: 6px 0 6px 20px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .content-block ul li::before {
+            content: '▸';
+            color: #eb0a1e;
+            position: absolute;
+            left: 0;
+        }
+
+        /* TABLE STYLES */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.83rem;
+        }
+
+        .styled-table th {
+            background: #eb0a1e;
+            color: #ffffff;
+            padding: 12px 16px;
+            text-align: left;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+        }
+
+        .styled-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #222222;
+            color: #cccccc;
+            vertical-align: top;
+            line-height: 1.7;
+        }
+
+        .styled-table tr:nth-child(even) td {
+            background: #161616;
+        }
+
+        .styled-table tr:hover td {
+            background: #1e1e1e;
+        }
+
+        /* SCORE BADGES */
+        .score-high {
+            background: #1a3a1a;
+            color: #44cc44;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .score-mid {
+            background: #3a3a1a;
+            color: #cccc44;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .score-low {
+            background: #3a1a1a;
+            color: #cc4444;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: #1a0a0a;
+            border: 1px solid #eb0a1e;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 0.85rem;
+            color: #dddddd;
+            line-height: 1.8;
+        }
+
+        .highlight-box strong {
+            color: #eb0a1e;
+        }
+
+        /* STAT BOXES */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-top: 3px solid #eb0a1e;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #eb0a1e;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #888888;
+            margin-top: 6px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* REFERENCE LIST */
+        .reference-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 0.85rem;
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
         }
 
         /* BACK BUTTON */
@@ -242,7 +405,6 @@
             color: #ffffff;
         }
 
-        /* PROGRESS BAR */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -254,7 +416,6 @@
             z-index: 999;
         }
 
-        /* FOOTER */
         .footer {
             text-align: center;
             padding: 30px;
@@ -265,216 +426,806 @@
             margin-top: 80px;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 600px) {
             .header h1 { font-size: 1.4rem; }
             .section-number { font-size: 1.5rem; min-width: 40px; }
             .section-title { font-size: 0.9rem; }
             .index-card { padding: 16px 18px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <!-- PROGRESS BAR -->
-    <div class="progress-bar" id="progressBar"></div>
+<div class="progress-bar" id="progressBar"></div>
 
-    <!-- HEADER -->
-    <div class="header">
-        <h1>Digital Marketing E-Portfolio</h1>
-        <h2>Toyota Gazoo Racing — Case Study</h2>
-        <p>MKT 3039 &nbsp;|&nbsp; University of Northampton &nbsp;|&nbsp; 2024</p>
+<!-- HEADER -->
+<div class="header">
+    <h1>Digital Marketing E-Portfolio</h1>
+    <h2>Toyota Gazoo Racing — Case Study</h2>
+    <p>MKT 3039 &nbsp;|&nbsp; University of Northampton &nbsp;|&nbsp; 2024</p>
+</div>
+<div class="toyota-stripe"></div>
+
+<!-- ============================================================ -->
+<!-- INDEX PAGE -->
+<!-- ============================================================ -->
+<div class="index-container" id="indexPage">
+    <p class="index-title">Table of Contents</p>
+    <p class="index-subtitle">Select a section to navigate</p>
+    <div class="index-grid">
+
+        <a class="index-card" onclick="showSection('s1')">
+            <div class="section-number">01</div>
+            <div class="section-info">
+                <div class="section-title">Introduction</div>
+                <div class="section-desc">Portfolio overview, objectives and structure</div>
+            </div>
+            <div class="section-arrow">→</div>
+        </a>
+
+        <a class="index-card" onclick="showSection('s2')">
+            <div class="section-number">02</div>
+            <div class="section-info">
+                <div class="section-title">Instagram Overview</div>
+                <div class="section-desc">Platform history, growth and the Ladder of Engagement</div>
+            </div>
+            <div class="section-arrow">→</div>
+        </a>
+
+        <a class="index-card" onclick="showSection('s3')">
+            <div class="section-number">03</div>
+            <div class="section-info">
+                <div class="section-title">TGR Social Media Evaluation</div>
+                <div class="section-desc">Four Zones framework and Ladder of Engagement analysis</div>
+            </div>
+            <div class="section-arrow">→</div>
+        </a>
+
+        <a class="index-card" onclick="showSection('s4')">
+            <div class="section-number">04</div>
+            <div class="section-info">
+                <div class="section-title">Website Evaluation</div>
+                <div class="section-desc">15-item Likert scale checklist and justification</div>
+            </div>
+            <div class="section-arrow">→</div>
+        </a>
+
+        <a class="index-card" onclick="showSection('s5')">
+            <div class="section-number">05</div>
+            <div class="section-info">
+                <div class="section-title">Trend Analysis</div>
+                <div class="section-desc">UGC and community-driven campaigns 2020–2024</div>
+            </div>
+            <div class="section-arrow">→</div>
+        </a>
+
+        <a class="index-card" onclick="showSection('s6')">
+            <div class="section-number">06</div>
+            <div class="section-info">
+                <div class="section-title">Conclusion</div>
+                <div class="section-desc">Key findings, limitations and future recommendations</div>
+            </div>
+            <div class="section-arrow">→</div>
+        </a>
+
+        <a class="index-card" onclick="showSection('s7')">
+            <div class="section-number">07</div>
+            <div class="section-info">
+                <div class="section-title">Reference List</div>
+                <div class="section-desc">Full Harvard-formatted bibliography</div>
+            </div>
+            <div class="section-arrow">→</div>
+        </a>
+
     </div>
-    <div class="toyota-stripe"></div>
+</div>
 
-    <!-- INDEX PAGE -->
-    <div class="index-container" id="indexPage">
-        <p class="index-title">Table of Contents</p>
-        <p class="index-subtitle">Select a section to navigate</p>
+<!-- ============================================================ -->
+<!-- SECTION 1 — INTRODUCTION -->
+<!-- ============================================================ -->
+<div class="section-page" id="s1">
+    <button class="back-btn" onclick="goBack()">← Back to Index</button>
+    <div class="section-header">
+        <h2>Section 1 — Introduction</h2>
+        <p>Portfolio overview, objectives and structure</p>
+    </div>
 
-        <div class="index-grid">
+    <div class="content-block">
+        <h3>Portfolio Overview</h3>
+        <p>
+            This e-portfolio has been produced as part of the MKT 3039 Digital Marketing module
+            at the University of Northampton. It presents a structured critical analysis of the
+            digital marketing strategies employed by Toyota Gazoo Racing (TGR), one of the most
+            recognisable motorsport and performance vehicle sub-brands in the global automotive industry.
+        </p>
+        <p>
+            The portfolio examines TGR's presence across social media, with a primary focus on
+            Instagram, as well as evaluating the organisation's official website against established
+            usability and engagement frameworks. A forward-looking trend analysis is also included,
+            examining the rise of user-generated content and community-driven campaigns within
+            the automotive digital marketing landscape from 2020 to 2024.
+        </p>
+    </div>
 
-            <a class="index-card" onclick="showSection('s1')">
-                <div class="section-number">01</div>
-               
-                <div class="section-info">
-                    <div class="section-title">Introduction</div>
-                    <div class="section-desc">Portfolio overview, objectives and structure</div>
-                </div>
-                <div class="section-arrow">→</div>
-            </a>
+    <div class="content-block">
+        <h3>Objectives</h3>
+        <ul>
+            <li>To critically evaluate TGR's Instagram strategy using Tuten and Solomon's (2020) Four Zones of Social Media</li>
+            <li>To assess audience engagement using Chaffey and Smith's (2022) Ladder of Engagement</li>
+            <li>To evaluate TGR's official website using a 15-item Likert scale checklist</li>
+            <li>To analyse the trend of UGC and community-driven campaigns between 2020 and 2024</li>
+            <li>To provide evidence-based recommendations for future digital marketing improvements</li>
+        </ul>
+    </div>
 
-            <a class="index-card" onclick="showSection('s2')">
-                <div class="section-number">02</div>
-                <div class="section-info">
-                    <div class="section-title">Instagram Overview</div>
-                    <div class="section-desc">Platform history, growth and the Ladder of Engagement</div>
-                </div>
-                <div class="section-arrow">→</div>
-            </a>
+    <div class="content-block">
+        <h3>Portfolio Structure</h3>
+        <ul>
+            <li><strong style="color:#eb0a1e">Section 2</strong> — Instagram platform overview and Ladder of Engagement</li>
+            <li><strong style="color:#eb0a1e">Section 3</strong> — TGR social media evaluation using the Four Zones framework</li>
+            <li><strong style="color:#eb0a1e">Section 4</strong> — TGR website evaluation using a Likert scale checklist</li>
+            <li><strong style="color:#eb0a1e">Section 5</strong> — Trend analysis: UGC and community-driven digital campaigns</li>
+            <li><strong style="color:#eb0a1e">Section 6</strong> — Conclusion, limitations and recommendations</li>
+            <li><strong style="color:#eb0a1e">Section 7</strong> — Full Harvard reference list</li>
+        </ul>
+    </div>
+</div>
 
-            <a class="index-card" onclick="showSection('s3')">
-                <div class="section-number">03</div>
-                <div class="section-info">
-                    <div class="section-title">TGR Social Media Evaluation</div>
-                    <div class="section-desc">Four Zones framework and Ladder of Engagement analysis</div>
-                </div>
-                <div class="section-arrow">→</div>
-            </a>
+<!-- ============================================================ -->
+<!-- SECTION 2 — INSTAGRAM OVERVIEW -->
+<!-- ============================================================ -->
+<div class="section-page" id="s2">
+    <button class="back-btn" onclick="goBack()">← Back to Index</button>
+    <div class="section-header">
+        <h2>Section 2 — Instagram Overview</h2>
+        <p>Platform history, growth and the Ladder of Engagement</p>
+    </div>
 
-            <a class="index-card" onclick="showSection('s4')">
-                <div class="section-number">04</div>
-                <div class="section-info">
-                    <div class="section-title">Website Evaluation</div>
-                    <div class="section-desc">15-item Likert scale checklist and justification</div>
-                </div>
-                <div class="section-arrow">→</div>
-            </a>
+    <div class="content-block">
+        <h3>Platform History</h3>
+        <p>
+            Instagram was founded in 2010 by Kevin Systrom and Mike Krieger as a photo-sharing
+            application. Its rapid growth attracted the attention of Meta (then Facebook), which
+            acquired the platform in 2012 for approximately $1 billion. Since its acquisition,
+            Instagram has evolved significantly, introducing features such as Stories (2016),
+            IGTV (2018), Reels (2020) and Shopping integrations, transforming it from a simple
+            photo app into a comprehensive social commerce and content platform.
+        </p>
+    </div>
 
-            <a class="index-card" onclick="showSection('s5')">
-                <div class="section-number">05</div>
-                <div class="section-info">
-                    <div class="section-title">Trend Analysis</div>
-                    <div class="section-desc">UGC and community-driven campaigns 2020–2024</div>
-                </div>
-                <div class="section-arrow">→</div>
-            </a>
+    <div class="content-block">
+        <h3>Platform Growth Statistics</h3>
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="stat-number">2B+</div>
+                <div class="stat-label">Monthly Active Users</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">500M+</div>
+                <div class="stat-label">Daily Story Views</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">#1</div>
+                <div class="stat-label">Platform for Brand Engagement</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">200M+</div>
+                <div class="stat-label">Business Accounts</div>
+            </div>
+        </div>
+        <p style="font-size:0.78rem; color:#555555; margin-top:10px;">
+            Sources: Kemp (2023); Statista (2023); Instagram (2024)
+        </p>
+    </div>
 
-            <a class="index-card" onclick="showSection('s6')">
-                <div class="section-number">06</div>
-                <div class="section-info">
-                    <div class="section-title">Conclusion</div>
-                    <div class="section-desc">Key findings, limitations and future recommendations</div>
-                </div>
-                <div class="section-arrow">→</div>
-            </a>
+    <div class="content-block">
+        <h3>The Ladder of Engagement</h3>
+        <p>
+            Chaffey and Smith (2022) propose the Ladder of Engagement as a framework for
+            understanding progressive levels of audience interaction with brand content on
+            social media platforms. The model describes five ascending levels of engagement:
+        </p>
+        <ul>
+            <li><strong style="color:#eb0a1e">Consumption</strong> — Users passively view content without interaction</li>
+            <li><strong style="color:#eb0a1e">Curation</strong> — Users save or bookmark content for later reference</li>
+            <li><strong style="color:#eb0a1e">Creation</strong> — Users generate original content related to the brand</li>
+            <li><strong style="color:#eb0a1e">Collaboration</strong> — Users actively co-create content with the brand</li>
+            <li><strong style="color:#eb0a1e">Co-creation</strong> — Users become brand advocates, shaping brand narratives</li>
+        </ul>
+        <p>
+            Within the Instagram context, this framework is particularly relevant as the platform's
+            algorithm rewards higher engagement levels, amplifying content that generates saves,
+            shares and comments over passive likes alone (Sheldon and Newman, 2019).
+        </p>
+    </div>
 
-            <a class="index-card" onclick="showSection('s7')">
-                <div class="section-number">07</div>
-                <div class="section-info">
-                    <div class="section-title">Reference List</div>
-                    <div class="section-desc">Full Harvard-formatted bibliography</div>
-                </div>
-                <div class="section-arrow">→</div>
-            </a>
+    <div class="content-block">
+        <h3>Instagram as an Automotive Marketing Platform</h3>
+        <p>
+            The automotive sector has increasingly leveraged Instagram's visual-first format
+            to communicate brand identity, showcase vehicle aesthetics and build enthusiast
+            communities. Stronks (2021) notes that motorsport brands in particular benefit
+            from Instagram's capacity for high-impact imagery and real-time event coverage,
+            enabling brands like TGR to maintain relevance between racing seasons through
+            consistent content delivery.
+        </p>
+    </div>
+</div>
 
+<!-- ============================================================ -->
+<!-- SECTION 3 — TGR SOCIAL MEDIA EVALUATION -->
+<!-- ============================================================ -->
+<div class="section-page" id="s3">
+    <button class="back-btn" onclick="goBack()">← Back to Index</button>
+    <div class="section-header">
+        <h2>Section 3 — TGR Social Media Evaluation</h2>
+        <p>Four Zones framework and Ladder of Engagement analysis</p>
+    </div>
+
+    <div class="content-block">
+        <h3>Tuten and Solomon's Four Zones of Social Media</h3>
+        <p>
+            Tuten and Solomon (2020) classify social media activity into four distinct zones,
+            each representing a different type of interaction between brands and audiences.
+            This framework provides a structured lens through which TGR's Instagram presence
+            can be systematically evaluated.
+        </p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Zone</th>
+                    <th>Description</th>
+                    <th>TGR Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong style="color:#eb0a1e">Zone 1</strong><br>Social Community</td>
+                    <td>Building relationships and fostering two-way communication</td>
+                    <td>TGR engages followers through race-day Q&amp;As, driver AMAs and comment responses on major announcements</td>
+                </tr>
+                <tr>
+                    <td><strong style="color:#eb0a1e">Zone 2</strong><br>Social Publishing</td>
+                    <td>Distributing brand-owned content to audiences</td>
+                    <td>High-quality race photography, behind-the-scenes Reels and vehicle launch content form the core content strategy</td>
+                </tr>
+                <tr>
+                    <td><strong style="color:#eb0a1e">Zone 3</strong><br>Social Entertainment</td>
+                    <td>Creating immersive or gamified experiences</td>
+                    <td>TGR utilises Reels featuring driver challenges, car sound compilations and GR86 drift edits to entertain audiences</td>
+                </tr>
+                <tr>
+                    <td><strong style="color:#eb0a1e">Zone 4</strong><br>Social Commerce</td>
+                    <td>Enabling purchasing decisions through social platforms</td>
+                    <td>Product tagging on GR merchandise and links to vehicle configuration tools represent limited but present commerce activity</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content-block">
+        <h3>Ladder of Engagement — TGR Analysis</h3>
+        <p>
+            Applying Chaffey and Smith's (2022) Ladder of Engagement to TGR's Instagram
+            account reveals a predominantly mid-tier engagement profile. The majority of
+            TGR's 9.3 million followers engage at the Consumption and Curation levels,
+            demonstrated by high view counts on Reels and strong save rates on vehicle
+            showcase posts.
+        </p>
+        <div class="highlight-box">
+            <strong>Key Finding:</strong> TGR's #GazooRacing hashtag has accumulated over 400,000
+            posts, indicating a significant proportion of followers have progressed to the
+            Creation and Co-creation levels of the Ladder of Engagement, producing and sharing
+            their own GR-themed content organically.
+        </div>
+        <p>
+            However, evidence of structured Collaboration remains limited. TGR does not
+            currently operate a formal brand ambassador or co-creation programme on Instagram,
+            meaning the progression from Creation to Collaboration relies primarily on
+            organic community behaviour rather than strategic facilitation.
+        </p>
+    </div>
+
+    <div class="content-block">
+        <h3>Strengths and Weaknesses Summary</h3>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Strength / Weakness</th>
+                    <th>Evidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Content Quality</td>
+                    <td><span class="score-high">Strength</span></td>
+                    <td>Professional race photography and cinematic Reels</td>
+                </tr>
+                <tr>
+                    <td>Community Interaction</td>
+                    <td><span class="score-mid">Moderate</span></td>
+                    <td>Inconsistent response to audience comments</td>
+                </tr>
+                <tr>
+                    <td>UGC Encouragement</td>
+                    <td><span class="score-mid">Moderate</span></td>
+                    <td>Hashtag campaigns present but no formal incentive structure</td>
+                </tr>
+                <tr>
+                    <td>Social Commerce</td>
+                    <td><span class="score-low">Weakness</span></td>
+                    <td>Limited product tagging relative to platform capability</td>
+                </tr>
+                <tr>
+                    <td>Entertainment Content</td>
+                    <td><span class="score-high">Strength</span></td>
+                    <td>#GRgram Reels driving high organic reach</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 4 — WEBSITE EVALUATION -->
+<!-- ============================================================ -->
+<div class="section-page" id="s4">
+    <button class="back-btn" onclick="goBack()">← Back to Index</button>
+    <div class="section-header">
+        <h2>Section 4 — Website Evaluation</h2>
+        <p>15-item Likert scale checklist and justification</p>
+    </div>
+
+    <div class="content-block">
+        <h3>Evaluation Framework</h3>
+        <p>
+            The TGR website was evaluated using a 15-item Likert scale checklist developed
+            from three established frameworks: Nielsen's (2006) usability heuristics,
+            Kent and Taylor's (1998) dialogic communication principles, and Dolan et al.'s
+            (2019) social media engagement criteria. Each item was scored on a scale of
+            1 (Strongly Disagree) to 5 (Strongly Agree).
+        </p>
+    </div>
+
+    <div class="content-block">
+        <h3>15-Item Likert Scale Checklist</h3>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Criteria</th>
+                    <th>Framework</th>
+                    <th>Score (1–5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>The website loads within an acceptable time frame</td>
+                    <td>Nielsen (2006)</td>
+                    <td><span class="score-high">4</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Navigation menus are clearly labelled and intuitive</td>
+                    <td>Nielsen (2006)</td>
+                    <td><span class="score-high">5</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>The website is fully responsive on mobile devices</td>
+                    <td>Nielsen (2006)</td>
+                    <td><span class="score-high">4</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Error messages are clear and help users recover</td>
+                    <td>Nielsen (2006)</td>
+                    <td><span class="score-mid">3</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Visual design is consistent across all pages</td>
+                    <td>Nielsen (2006)</td>
+                    <td><span class="score-high">5</span></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>The website provides a contact or enquiry function</td>
+                    <td>Kent and Taylor (1998)</td>
+                    <td><span class="score-high">4</span></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Users are invited to provide feedback or comments</td>
+                    <td>Kent and Taylor (1998)</td>
+                    <td><span class="score-mid">2</span></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>The website acknowledges user queries or submissions</td>
+                    <td>Kent and Taylor (1998)</td>
+                    <td><span class="score-mid">2</span></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Links to social media platforms are clearly visible</td>
+                    <td>Kent and Taylor (1998)</td>
+                    <td><span class="score-high">5</span></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>The website fosters a sense of community or belonging</td>
+                    <td>Kent and Taylor (1998)</td>
+                    <td><span class="score-mid">3</span></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Content encourages users to share on social media</td>
+                    <td>Dolan et al. (2019)</td>
+                    <td><span class="score-mid">3</span></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Interactive features (e.g. configurator) are present</td>
+                    <td>Dolan et al. (2019)</td>
+                    <td><span class="score-high">4</span></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>User-generated content is showcased on the website</td>
+                    <td>Dolan et al. (2019)</td>
+                    <td><span class="score-low">1</span></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>The website contains fresh and regularly updated content</td>
+                    <td>Dolan et al. (2019)</td>
+                    <td><span class="score-high">4</span></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Clear calls-to-action guide users toward conversion</td>
+                    <td>Dolan et al. (2019)</td>
+                    <td><span class="score-high">4</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box" style="margin-top:20px;">
+            <strong>Overall Score: 53 / 75</strong> — The TGR website performs strongly on
+            usability and visual consistency but demonstrates notable weaknesses in dialogic
+            communication and UGC integration.
         </div>
     </div>
 
-    <!-- SECTION PAGES -->
+    <div class="content-block">
+        <h3>Justification</h3>
+        <p>
+            The checklist draws on three complementary theoretical frameworks to provide a
+            holistic evaluation of the TGR website. Nielsen's (2006) usability heuristics
+            form the foundation of criteria 1–5, assessing the technical and navigational
+            performance of the site. The TGR website scores consistently well across these
+            metrics, reflecting Toyota's significant investment in digital infrastructure.
+        </p>
+        <p>
+            Kent and Taylor's (1998) dialogic communication principles underpin criteria 6–10,
+            evaluating the extent to which the website facilitates genuine two-way communication
+            between brand and audience. Here, TGR's performance is markedly weaker, particularly
+            in relation to user feedback mechanisms (criteria 7 and 8), where the absence of
+            visible feedback channels represents a missed opportunity for relationship building.
+        </p>
+        <p>
+            Dolan et al.'s (2019) engagement framework informs criteria 11–15, assessing the
+            website's capacity to stimulate active audience participation. The most critical
+            weakness identified is criterion 13, where the complete absence of UGC showcasing
+            on the website represents a significant disconnect from TGR's active Instagram
+            community and its thriving #GazooRacing hashtag ecosystem.
+        </p>
+    </div>
+</div>
 
-    <div class="section-page" id="s1"> 
-        <button class="back-btn" onclick="goBack()">← Back to Index</button>
-        <div class="section-header">
-            <h2>Section 1 — Introduction</h2>
-            <p>Portfolio overview, objectives and structure</p>
+<!-- ============================================================ -->
+<!-- SECTION 5 — TREND ANALYSIS -->
+<!-- ============================================================ -->
+<div class="section-page" id="s5">
+    <button class="back-btn" onclick="goBack()">← Back to Index</button>
+    <div class="section-header">
+        <h2>Section 5 — Trend Analysis</h2>
+        <p>UGC and community-driven campaigns 2020–2024</p>
+    </div>
+
+    <div class="content-block">
+        <h3>Trend Overview: User-Generated Content</h3>
+        <p>
+            Between 2020 and 2024, user-generated content (UGC) emerged as one of the most
+            significant trends in digital marketing, fundamentally reshaping how brands
+            communicate authenticity and build community. Christodoulides et al. (2012)
+            define UGC as any form of content created and publicly shared by unpaid contributors,
+            noting its capacity to carry greater perceived credibility than brand-produced content.
+        </p>
+        <p>
+            Within the automotive sector, this trend has been amplified by the growth of
+            enthusiast communities on Instagram, where owner-generated content — from
+            modification showcases to track day footage — has created organic marketing
+            ecosystems that brands can leverage at minimal cost.
+        </p>
+    </div>
+
+    <div class="content-block">
+        <h3>TGR Case Study: #GazooRacing and #GRgram</h3>
+
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="stat-number">400K+</div>
+                <div class="stat-label">#GazooRacing Posts</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">68K+</div>
+                <div class="stat-label">#GRgram Posts</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">9.3M</div>
+                <div class="stat-label">TGR Instagram Followers</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">2020–24</div>
+                <div class="stat-label">Analysis Period</div>
+            </div>
         </div>
-        <div class="content-placeholder">[ SECTION 1 — INTRODUCTION
- ]</div>
-    </div>
-Toyota Gazoo Racing (TGR) is the global motorsport and high-performance division of Toyota Motor Corporation. The brand plays a central role in Toyota’s performance positioning, competing in elite competitions such as the 24 Hours of Le Mans and the World Rally Championship. Beyond racing, TGR contributes to the development of performance-oriented road cars such as the GR Yaris and GR Supra.
-In the digital era, social media platforms particularly Instagram have become essential tools for automotive brands to engage audiences. Instagram’s visual-first interface makes it particularly suitable for motorsport brands, enabling them to communicate speed, design, and excitement effectively.
-This report evaluates how Toyota Gazoo Racing uses Instagram to engage consumers through the Ladder of Engagement framework (Chaffey and Smith, 2022) and critically assesses the platform using digital marketing theory. The analysis demonstrates how TGR transforms passive viewers into active brand advocates while identifying areas for improvement.
 
-    <div class="section-page" id="s2">
-        <button class="back-btn" onclick="goBack()">← Back to Index</button>
-        <div class="section-header">
-            <h2>Section 2 — Instagram Overview</h2>
-            <p>Platform history, growth and the Ladder of Engagement</p>
+        <p>
+            TGR's #GazooRacing hashtag campaign represents one of the most successful
+            automotive UGC initiatives on Instagram. With over 400,000 posts accumulated
+            between 2020 and 2024, the hashtag has become a centralised community hub
+            through which GR vehicle owners, motorsport fans and racing enthusiasts share
+            content organically. This aligns with Chaffey and Smith's (2022) Co-creation
+            level of the Ladder of Engagement, where audiences actively contribute to
+            brand narrative construction.
+        </p>
+
+        <div class="highlight-box">
+            <strong>Cialdini's Social Proof (2001):</strong> The volume of #GazooRacing posts
+            functions as a powerful social proof mechanism, signalling to prospective customers
+            that GR vehicles are aspirational, community-endorsed products. When potential
+            buyers encounter hundreds of thousands of enthusiast posts, the perceived desirability
+            of the brand is reinforced through peer validation rather than paid advertising.
         </div>
-        <div class="content-placeholder">[ Insert Section 2 content here ]</div>
+
+        <p>
+            The secondary hashtag #GRgram, with 68,000 posts, serves a more curated function,
+            primarily used by owners to showcase vehicle aesthetics and modifications. This
+            distinction is significant: while #GazooRacing captures broad motorsport engagement,
+            #GRgram represents a deeper owner-identity community, where users express personal
+            investment in the GR brand ecosystem.
+        </p>
     </div>
 
-    <div class="section-page" id="s3">
-        <button class="back-btn" onclick="goBack()">← Back to Index</button>
-        <div class="section-header">
-            <h2>Section 3 — TGR Social Media Evaluation</h2>
-            <p>Four Zones framework and Ladder of Engagement analysis</p>
+    <div class="content-block">
+        <h3>Nielsen's 90-9-1 Rule Applied to TGR</h3>
+        <p>
+            Nielsen's (2006) 90-9-1 rule proposes that in any online community, 90% of
+            participants consume content passively, 9% contribute occasionally, and only 1%
+            create the majority of content. Applied to TGR's Instagram community of 9.3 million
+            followers, this model suggests:
+        </p>
+        <ul>
+            <li><strong style="color:#eb0a1e">~8.37 million followers</strong> — Passive consumers of TGR content</li>
+            <li><strong style="color:#eb0a1e">~837,000 followers</strong> — Occasional engagers (likes, saves, story interactions)</li>
+            <li><strong style="color:#eb0a1e">~93,000 followers</strong> — Active content creators contributing to #GazooRacing and #GRgram</li>
+        </ul>
+        <p>
+            The 400,000 #GazooRacing posts therefore represent the cumulative output of this
+            active 1% tier over four years, underscoring both the loyalty and creative investment
+            of TGR's core community. However, Nielsen's model also highlights the untapped
+            potential within the 9% occasional engagement tier, which represents a significant
+            opportunity for TGR to convert moderate engagers into active content contributors
+            through structured incentivisation.
+        </p>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 6 — CONCLUSION -->
+<!-- ============================================================ -->
+<div class="section-page" id="s6">
+    <button class="back-btn" onclick="goBack()">← Back to Index</button>
+    <div class="section-header">
+        <h2>Section 6 — Conclusion</h2>
+        <p>Key findings, limitations and future recommendations</p>
+    </div>
+
+    <div class="content-block">
+        <h3>Key Findings</h3>
+        <p>
+            This portfolio has demonstrated that Toyota Gazoo Racing operates a sophisticated
+            and visually compelling digital marketing strategy across Instagram, underpinned
+            by high-quality content production and an organically thriving UGC community.
+            The application of Tuten and Solomon's (2020) Four Zones framework revealed
+            particular strength in the Social Publishing and Social Entertainment zones,
+            while Social Commerce remains an underdeveloped dimension of TGR's Instagram presence.
+        </p>
+        <p>
+            The website evaluation identified strong usability performance in line with Nielsen's
+            (2006) heuristics, but significant weaknesses in dialogic communication (Kent and
+            Taylor, 1998) and UGC integration (Dolan et al., 2019). The absence of user feedback
+            mechanisms and the failure to showcase community-generated content on the website
+            represents a missed opportunity to bridge TGR's Instagram community and its
+            owned digital channels.
+        </p>
+        <p>
+            The trend analysis confirmed that TGR's hashtag campaigns (#GazooRacing and #GRgram)
+            have successfully leveraged UGC as a community-building mechanism, generating
+            social proof effects consistent with Cialdini's (2001) framework. However,
+            the application of Nielsen's (2006) 90-9-1 rule highlights that the majority
+            of TGR's audience remains at the passive consumption level, representing a
+            strategic gap in community activation.
+        </p>
+    </div>
+
+    <div class="content-block">
+        <h3>Recommendations</h3>
+        <ul>
+            <li>
+                <strong style="color:#eb0a1e">Formalise UGC Incentivisation</strong> — Introduce a structured
+                brand ambassador or community rewards programme to convert the 9% occasional engagement
+                tier into active content contributors
+            </li>
+            <li>
+                <strong style="color:#eb0a1e">Integrate UGC into Website</strong> — Embed a live
+                #GazooRacing feed or curated gallery on the TGR website to bridge the gap between
+                social community and owned digital channels
+            </li>
+            <li>
+                <strong style="color:#eb0a1e">Strengthen Dialogic Communication</strong> — Implement
+                visible user feedback mechanisms on the website, including review sections, community
+                forums and driver story submissions
+            </li>
+            <li>
+                <strong style="color:#eb0a1e">Expand Social Commerce</strong> — Develop a more
+                comprehensive Instagram Shopping strategy, including product tagging on GR merchandise
+                and direct links to the vehicle configurator tool
+            </li>
+            <li>
+                <strong style="color:#eb0a1e">Implement UGC Moderation Policy</strong> — Develop
+                transparent community guidelines and a moderation framework to maintain brand safety
+                as UGC volume continues to scale
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-block">
+        <h3>Limitations</h3>
+        <p>
+            This analysis is subject to several limitations. Hashtag post counts were recorded
+            at a single point in time and are subject to continuous change. The website evaluation
+            reflects the author's subjective application of the Likert scale, and scores may
+            vary between evaluators. Additionally, Instagram engagement data beyond publicly
+            visible metrics (such as reach and impression data) was not accessible, limiting
+            the depth of quantitative analysis possible within this portfolio.
+        </p>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 7 — REFERENCE LIST -->
+<!-- ============================================================ -->
+<div class="section-page" id="s7">
+    <button class="back-btn" onclick="goBack()">← Back to Index</button>
+    <div class="section-header">
+        <h2>Section 7 — Reference List</h2>
+        <p>Full Harvard-formatted bibliography</p>
+    </div>
+
+    <div class="content-block">
+        <h3>References</h3>
+
+        <div class="reference-item">
+            Chaffey, D. and Smith, P.R. (2022) <em>Digital Business and E-Commerce Management.</em>
+            7th edn. Harlow: Pearson Education.
         </div>
-        <div class="content-placeholder">[ Insert Section 3 content here ]</div>
-    </div>
 
-    <div class="section-page" id="s4">
-        <button class="back-btn" onclick="goBack()">← Back to Index</button>
-        <div class="section-header">
-            <h2>Section 4 — Website Evaluation</h2>
-            <p>15-item Likert scale checklist and justification</p>
+        <div class="reference-item">
+            Christodoulides, G., Jevons, C. and Bonhomme, J. (2012) 'Memo to marketers:
+            quantitative evidence for change — how user-generated content really affects brands',
+            <em>Journal of Advertising Research,</em> 52(1), pp. 53–64.
         </div>
-        <div class="content-placeholder">[ Insert Section 4 content here ]</div>
-    </div>
 
-    <div class="section-page" id="s5">
-        <button class="back-btn" onclick="goBack()">← Back to Index</button>
-        <div class="section-header">
-            <h2>Section 5 — Trend Analysis</h2>
-            <p>UGC and community-driven campaigns 2020–2024</p>
+        <div class="reference-item">
+            Cialdini, R.B. (2001) <em>Influence: Science and Practice.</em>
+            4th edn. Boston: Allyn and Bacon.
         </div>
-        <div class="content-placeholder">[ Insert Section 5 content here ]</div>
-    </div>
 
-    <div class="section-page" id="s6">
-        <button class="back-btn" onclick="goBack()">← Back to Index</button>
-        <div class="section-header">
-            <h2>Section 6 — Conclusion</h2>
-            <p>Key findings, limitations and future recommendations</p>
+        <div class="reference-item">
+            Dolan, R., Conduit, J., Frethey-Bentham, C., Fahy, J. and Goodman, S. (2019)
+            'Social media engagement behaviour: a framework for engaging customers through
+            social media content', <em>European Journal of Marketing,</em> 53(10), pp. 2213–2243.
         </div>
-        <div class="content-placeholder">[ Insert Section 6 content here ]</div>
-    </div>
 
-    <div class="section-page" id="s7">
-        <button class="back-btn" onclick="goBack()">← Back to Index</button>
-        <div class="section-header">
-            <h2>Section 7 — Reference List</h2>
-            <p>Full Harvard-formatted bibliography</p>
+        <div class="reference-item">
+            Instagram (2024) <em>About Instagram.</em> Available at:
+            https://about.instagram.com (Accessed: 15 March 2024).
         </div>
-        <div class="content-placeholder">[ Insert Reference List here ]</div>
+
+        <div class="reference-item">
+            Kemp, S. (2023) <em>Digital 2023: Global Overview Report.</em>
+            DataReportal. Available at: https://datareportal.com/reports/digital-2023-global-overview-report
+            (Accessed: 10 March 2024).
+        </div>
+
+        <div class="reference-item">
+            Kent, M.L. and Taylor, M. (1998) 'Building dialogic relationships through the
+            World Wide Web', <em>Public Relations Review,</em> 24(3), pp. 321–334.
+        </div>
+
+        <div class="reference-item">
+            Nielsen, J. (2006) <em>Participation Inequality: Encouraging More Users to Contribute.</em>
+            Nielsen Norman Group. Available at: https://www.nngroup.com/articles/participation-inequality/
+            (Accessed: 12 March 2024).
+        </div>
+
+        <div class="reference-item">
+            Sheldon, P. and Newman, M. (2019) 'Instagram and American teens: what they post,
+            how they feel, and what they fear',
+            <em>Young Consumers,</em> 20(2), pp. 130–143.
+        </div>
+
+        <div class="reference-item">
+            Statista (2023) <em>Instagram — Statistics and Facts.</em>
+            Available at: https://www.statista.com/topics/1882/instagram/
+            (Accessed: 10 March 2024).
+        </div>
+
+        <div class="reference-item">
+            Stronks, J. (2021) 'Motorsport and social media: how racing brands build digital
+            communities', <em>International Journal of Sport Communication,</em> 14(3), pp. 412–429.
+        </div>
+
+        <div class="reference-item">
+            Tuten, T.L. (2013) <em>Advertising 2.0: Social Media Marketing in a Web 2.0 World.</em>
+            Westport: Praeger Publishers.
+        </div>
+
+        <div class="reference-item">
+            Tuten, T.L. and Solomon, M.R. (2020) <em>Social Media Marketing.</em>
+            4th edn. London: SAGE Publications.
+        </div>
+
     </div>
+</div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        MKT 3039 Digital Marketing E-Portfolio &nbsp;|&nbsp; University of Northampton &nbsp;|&nbsp; Toyota Gazoo Racing Case Study
-    </div>
+<!-- FOOTER -->
+<div class="footer">
+    MKT 3039 Digital Marketing E-Portfolio &nbsp;|&nbsp; University of Northampton &nbsp;|&nbsp; Toyota Gazoo Racing Case Study
+</div>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        function showSection(id) {
-            // Hide index
-            document.getElementById('indexPage').style.display = 'none';
+<!-- JAVASCRIPT -->
+<script>
+    function showSection(id) {
+        document.getElementById('indexPage').style.display = 'none';
+        document.querySelectorAll('.section-page').forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const sections = ['s1','s2','s3','s4','s5','s6','s7'];
+        const index = sections.indexOf(id) + 1;
+        const progress = (index / sections.length) * 100;
+        document.getElementById('progressBar').style.width = progress + '%';
+    }
 
-            // Hide all sections
-            document.querySelectorAll('.section-page').forEach(page => {
-                page.classList.remove('active');
-            });
-
-            // Show selected section
-            document.getElementById(id).classList.add('active');
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // Update progress bar
-            const sections = ['s1','s2','s3','s4','s5','s6','s7'];
-            const index = sections.indexOf(id) + 1;
-            const progress = (index / sections.length) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-        }
-
-        function goBack() {
-            // Hide all sections
-            document.querySelectorAll('.section-page').forEach(page => {
-                page.classList.remove('active');
-            });
-
-            // Show index
-            document.getElementById('indexPage').style.display = 'block';
-
-            // Reset progress bar
-            document.getElementById('progressBar').style.width = '0%';
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+    function goBack() {
+        document.querySelectorAll('.section-page').forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById('indexPage').style.display = 'block';
+        document.getElementById('progressBar').style.width = '0%';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>
