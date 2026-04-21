@@ -229,74 +229,21 @@
             display: block;
         }
 
-        /* Navigation Button Row */
-        .nav-btn-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            gap: 12px;
-        }
-
         .back-btn {
             background: transparent;
             border: 1px solid #333333;
             color: #cccccc;
-            padding: 10px 22px;
+            padding: 8px 20px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.8rem;
+            margin-bottom: 30px;
             transition: all 0.3s ease;
         }
 
         .back-btn:hover {
             border-color: #eb0a1e;
             color: #eb0a1e;
-        }
-
-        .next-btn {
-            background: #eb0a1e;
-            border: 1px solid #eb0a1e;
-            color: #ffffff;
-            padding: 10px 22px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .next-btn:hover {
-            background: #cc0818;
-            border-color: #cc0818;
-            transform: translateX(3px);
-        }
-
-        .next-btn.finish-btn {
-            background: transparent;
-            border: 1px solid #eb0a1e;
-            color: #eb0a1e;
-        }
-
-        .next-btn.finish-btn:hover {
-            background: #eb0a1e;
-            color: #ffffff;
-            transform: none;
-        }
-
-        /* Bottom Navigation Row */
-        .bottom-nav-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid #2a2a2a;
-            gap: 12px;
         }
 
         .section-header {
@@ -580,6 +527,567 @@
             .main-container { padding: 20px 15px; }
             .welcome-banner { padding: 25px 20px; }
             .sections-grid { grid-template-columns: 1fr; }
-            .nav-btn-row { flex-direction: column; align-items: stretch; }
-            .bottom-nav-row { flex-direction: column; align-items: stretch; }
-            .next
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="header-left">
+        <h1>MKT3039 Digital Marketing</h1>
+        <p>University of Northampton &nbsp;|&nbsp; E-Portfolio</p>
+    </div>
+    <div class="tgr-badge">TOYOTA GAZOO RACING</div>
+</div>
+
+<!-- Progress Bar -->
+<div class="progress-container">
+    <div class="progress-label">Portfolio Progress</div>
+    <div class="progress-bar-outer">
+        <div class="progress-bar-inner" id="progressBar"></div>
+    </div>
+</div>
+
+<!-- Main Container -->
+<div class="main-container">
+
+    <!-- INDEX PAGE -->
+    <div class="index-page" id="indexPage">
+        <div class="welcome-banner">
+            <h2>Digital Marketing E-Portfolio</h2>
+            <p>A comprehensive analysis of Toyota Gazoo Racing's digital marketing presence,<br>
+            covering social media strategy, website evaluation, and emerging UGC trends.</p>
+            <div class="student-info">
+                <div class="info-pill">Module: <span>MKT3039</span></div>
+                <div class="info-pill">Brand: <span>Toyota Gazoo Racing</span></div>
+                <div class="info-pill">University: <span>Northampton</span></div>
+            </div>
+        </div>
+
+        <div class="sections-grid">
+            <div class="section-card" onclick="showSection('s1')">
+                <div class="card-number">1</div>
+                <div class="card-tag">Introduction</div>
+                <div class="card-title">Brand Overview & Portfolio Introduction</div>
+                <div class="card-desc">Introduction to Toyota Gazoo Racing and the scope of this digital marketing e-portfolio.</div>
+                <div class="card-arrow">View Section →</div>
+            </div>
+
+            <div class="section-card" onclick="showSection('s2')">
+                <div class="card-number">2</div>
+                <div class="card-tag">Social Media History</div>
+                <div class="card-title">Instagram: History & Ladder of Engagement</div>
+                <div class="card-desc">Evolution of Instagram and application of Chaffey & Smith's (2022) Ladder of Engagement to TGR.</div>
+                <div class="card-arrow">View Section →</div>
+            </div>
+
+            <div class="section-card" onclick="showSection('s3')">
+                <div class="card-number">3</div>
+                <div class="card-tag">Social Media Evaluation</div>
+                <div class="card-title">Four Zones of Social Media Analysis</div>
+                <div class="card-desc">Evaluation of TGR's social media using Tuten & Solomon's (2020) Four Zones framework.</div>
+                <div class="card-arrow">View Section →</div>
+            </div>
+
+            <div class="section-card" onclick="showSection('s4')">
+                <div class="card-number">4</div>
+                <div class="card-tag">Website Evaluation</div>
+                <div class="card-title">Likert Scale Website Assessment</div>
+                <div class="card-desc">15-item Likert scale evaluation of TGR's website scoring usability, design, and engagement.</div>
+                <div class="card-arrow">View Section →</div>
+            </div>
+
+            <div class="section-card" onclick="showSection('s5')">
+                <div class="card-number">5</div>
+                <div class="card-tag">Trend Analysis</div>
+                <div class="card-title">User-Generated Content (UGC) Trend</div>
+                <div class="card-desc">Analysis of the UGC trend 2020–2024 and TGR's hashtag campaigns #GazooRacing and #GRgram.</div>
+                <div class="card-arrow">View Section →</div>
+            </div>
+
+            <div class="section-card" onclick="showSection('s6')">
+                <div class="card-number">6</div>
+                <div class="card-tag">Recommendations</div>
+                <div class="card-title">Strategic Digital Marketing Recommendations</div>
+                <div class="card-desc">Actionable recommendations for TGR to improve digital engagement and UGC strategy.</div>
+                <div class="card-arrow">View Section →</div>
+            </div>
+
+            <div class="section-card" onclick="showSection('s7')">
+                <div class="card-number">7</div>
+                <div class="card-tag">References</div>
+                <div class="card-title">Harvard Reference List</div>
+                <div class="card-desc">Full bibliography of all academic sources cited throughout this e-portfolio.</div>
+                <div class="card-arrow">View Section →</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 1: Introduction -->
+    <div class="section-page" id="s1">
+        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="section-header">
+            <div class="sec-tag">Section 1 — Introduction</div>
+            <h2>Brand Overview & Portfolio Introduction</h2>
+            <p>An introduction to Toyota Gazoo Racing and the scope of this digital marketing e-portfolio.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>About Toyota Gazoo Racing</h3>
+            <p>Toyota Gazoo Racing (TGR) is Toyota's high-performance motorsport and road car division, established as a dedicated sub-brand to consolidate Toyota's racing heritage and performance vehicle lineup. The division competes at the highest levels of global motorsport, including the FIA World Endurance Championship (WEC), the World Rally Championship (WRC), and the 24 Hours of Le Mans, where it has achieved multiple overall victories.</p>
+            <p>TGR's road car lineup includes iconic models such as the GR Yaris, GR86, and the flagship GR Supra, each developed with direct learnings from the motorsport programme. The brand operates under the philosophy that "a car that has won on the racetrack makes production cars better," reflecting a deep integration between competitive racing and road car development.</p>
+            <div class="highlight-box">
+                <strong>Brand Mission:</strong> "To make ever-better cars through motorsport" — Toyota Gazoo Racing's guiding principle that connects on-track performance to road car development.
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Portfolio Scope</h3>
+            <p>This e-portfolio provides a comprehensive digital marketing analysis of Toyota Gazoo Racing across seven sections. The portfolio examines TGR's social media presence, with a focus on Instagram, evaluates the official TGR website using established academic frameworks, and analyses the emerging trend of User-Generated Content (UGC) as it relates to the brand's digital ecosystem.</p>
+            <ul>
+                <li>Section 2 examines Instagram's history and applies Chaffey & Smith's (2022) Ladder of Engagement</li>
+                <li>Section 3 evaluates TGR's social media using Tuten & Solomon's (2020) Four Zones framework</li>
+                <li>Section 4 applies a 15-item Likert scale to assess the TGR website</li>
+                <li>Section 5 analyses the UGC trend and TGR's hashtag campaign performance</li>
+                <li>Section 6 provides strategic recommendations for digital improvement</li>
+                <li>Section 7 contains the full Harvard reference list</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h3>Brand Digital Footprint</h3>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">9.3M</span>
+                    <div class="stat-label">Instagram Followers</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">400K+</span>
+                    <div class="stat-label">#GazooRacing Posts</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">68K+</span>
+                    <div class="stat-label">#GRgram Posts</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">53/75</span>
+                    <div class="stat-label">Website Likert Score</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: Instagram History -->
+    <div class="section-page" id="s2">
+        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="section-header">
+            <div class="sec-tag">Section 2 — Social Media History</div>
+            <h2>Instagram: History & Ladder of Engagement</h2>
+            <p>The evolution of Instagram as a platform and application of Chaffey & Smith's (2022) Ladder of Engagement to Toyota Gazoo Racing's Instagram strategy.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>History of Instagram</h3>
+            <p>Instagram was founded by Kevin Systrom and Mike Krieger and launched in October 2010 as a photo-sharing application for iOS devices. The platform distinguished itself through its simple, square-format photography and built-in filters, enabling users to share aesthetically curated content with minimal technical knowledge. Within 24 hours of launch, Instagram had attracted 25,000 users, demonstrating immediate market demand (Smith, 2012).</p>
+            <p>Facebook (now Meta) acquired Instagram in April 2012 for approximately $1 billion, a transaction that provided Instagram with significant resources for infrastructure development and global expansion. Following the acquisition, Instagram introduced video sharing in 2013, expanded to Android devices, and began rolling out advertising capabilities in 2015, transitioning from a pure social platform to a commercial ecosystem.</p>
+            <p>Subsequent developments included the introduction of Instagram Stories in 2016 (directly competing with Snapchat's ephemeral content model), IGTV for long-form video in 2018, and Instagram Reels in 2020 as a response to TikTok's rapidly growing short-form video format. By 2024, Instagram reported over two billion monthly active users globally (Meta, 2024), establishing it as one of the world's most influential digital marketing channels.</p>
+            <div class="highlight-box">
+                <strong>Key Milestone:</strong> Instagram's pivot to Reels in 2020 marked a strategic shift toward algorithmic content distribution, significantly increasing the organic reach potential for brands producing high-quality video content — a development directly relevant to TGR's racing footage and behind-the-scenes content strategy.
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Chaffey & Smith's (2022) Ladder of Engagement</h3>
+            <p>Chaffey and Smith (2022) conceptualise social media audience engagement as a hierarchical ladder, where users progress through increasingly active levels of participation. The model provides a useful diagnostic framework for evaluating the depth of a brand's community engagement and identifying where audience interaction is concentrated.</p>
+            <div class="ladder">
+                <div class="ladder-step">
+                    <div class="ladder-num">1</div>
+                    <div class="ladder-content">
+                        <h4>Lurkers / Viewers</h4>
+                        <p>The largest audience segment who consume content passively without interaction. On TGR's Instagram, this represents the majority of its 9.3 million followers who view posts, Stories, and Reels without liking, commenting, or sharing.</p>
+                    </div>
+                </div>
+                <div class="ladder-step">
+                    <div class="ladder-num">2</div>
+                    <div class="ladder-content">
+                        <h4>Followers / Subscribers</h4>
+                        <p>Users who have actively chosen to follow TGR's account, indicating brand interest and opt-in to receive content. TGR's 9.3 million followers represent this tier, though follower counts do not equate to active engagement.</p>
+                    </div>
+                </div>
+                <div class="ladder-step">
+                    <div class="ladder-num">3</div>
+                    <div class="ladder-content">
+                        <h4>Likers / Voters</h4>
+                        <p>Users who engage through simple one-click interactions such as likes or poll responses. TGR's race highlight posts and car reveal content consistently generate high like volumes, indicating strong passive engagement at this rung.</p>
+                    </div>
+                </div>
+                <div class="ladder-step">
+                    <div class="ladder-num">4</div>
+                    <div class="ladder-content">
+                        <h4>Commenters / Sharers</h4>
+                        <p>Users who invest time in written comments or actively share content to their own networks. TGR's motorsport content, particularly WEC and WRC coverage, drives comment activity among passionate enthusiasts. However, comment depth remains a developmental area.</p>
+                    </div>
+                </div>
+                <div class="ladder-step">
+                    <div class="ladder-num">5</div>
+                    <div class="ladder-content">
+                        <h4>Producers / UGC Creators</h4>
+                        <p>The most engaged tier, where community members create original content featuring the brand. The 400,000+ posts under #GazooRacing and 68,000+ posts under #GRgram demonstrate a significant producer community, though TGR has not yet formalised incentivisation for this behaviour.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Application to TGR's Instagram Strategy</h3>
+            <p>Applying the Ladder of Engagement framework reveals that TGR's Instagram strategy is effective at attracting followers and generating passive engagement (rungs 1–3) but has not yet developed structured mechanisms to elevate users toward the producer tier (rung 5). The brand's content strategy is primarily broadcast-oriented, prioritising high-quality visual publishing over community co-creation.</p>
+            <p>To maximise the ladder's potential, TGR would benefit from implementing formalised UGC campaigns, featuring community content in official channels, and introducing engagement mechanics such as challenges, competitions, and community spotlights that incentivise users to climb from passive consumption toward active content production.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 3: Four Zones -->
+    <div class="section-page" id="s3">
+        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="section-header">
+            <div class="sec-tag">Section 3 — Social Media Evaluation</div>
+            <h2>Four Zones of Social Media Analysis</h2>
+            <p>Evaluation of Toyota Gazoo Racing's social media presence using Tuten & Solomon's (2020) Four Zones of Social Media framework.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Tuten & Solomon's (2020) Four Zones Framework</h3>
+            <p>Tuten and Solomon (2020) propose that social media activity can be categorised into four distinct zones, each representing a different type of social media environment and the corresponding marketing opportunities available within them. The framework provides a structured approach to audit a brand's social media presence across multiple dimensions.</p>
+            <div class="zone-grid">
+                <div class="zone-card">
+                    <div class="zone-badge badge-strong">STRONG</div>
+                    <h4>Zone 1: Social Community</h4>
+                    <p>Relationship-building and two-way dialogue between brand and audience. TGR maintains active Instagram, Twitter/X, and Facebook presences with regular posting cadence.</p>
+                </div>
+                <div class="zone-card">
+                    <div class="zone-badge badge-strong">STRONG</div>
+                    <h4>Zone 2: Social Publishing</h4>
+                    <p>Content creation and distribution including blogs, videos, and photo content. TGR excels here with high-quality race footage, behind-the-scenes content, and car reveal videos.</p>
+                </div>
+                <div class="zone-card">
+                    <div class="zone-badge badge-moderate">MODERATE</div>
+                    <h4>Zone 3: Social Entertainment</h4>
+                    <p>Games, gamified experiences, and entertainment-driven social engagement. TGR has some presence through racing simulations and gaming partnerships but this zone is underdeveloped.</p>
+                </div>
+                <div class="zone-card">
+                    <div class="zone-badge badge-weak">WEAK</div>
+                    <h4>Zone 4: Social Commerce</h4>
+                    <p>Using social media for direct sales and transactional activity. TGR has minimal social commerce integration — merchandise and car configurators are not linked from social platforms.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Zone 1: Social Community — Detailed Analysis</h3>
+            <p>TGR maintains a substantial social community presence with its 9.3 million Instagram followers representing one of the largest automotive motorsport brand audiences on the platform. The brand posts consistently across race weekends, car launches, and driver features, maintaining audience attention throughout the motorsport calendar.</p>
+            <p>However, community management exhibits limitations. Response rates to comments are low, and the brand rarely initiates dialogue with followers beyond broadcast content. Tuten and Solomon (2020) emphasise that genuine community requires two-way interaction — an area where TGR's social team could invest additional resource.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Zone 2: Social Publishing — Detailed Analysis</h3>
+            <p>This is TGR's strongest zone. The brand produces consistently high-quality visual content including onboard racing footage, car development documentaries, and driver personality features. Reels content featuring Le Mans and WRC stage footage regularly achieves high organic reach due to the inherent visual drama of motorsport.</p>
+            <div class="highlight-box">
+                <strong>Strength:</strong> TGR's publishing output benefits from access to exclusive motorsport content that competitor lifestyle brands cannot replicate — onboard telemetry footage, pit lane access, and factory development content represent a significant publishing advantage.
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Zone 3 & 4: Gaps and Opportunities</h3>
+            <p>The social entertainment zone represents a missed opportunity for TGR. The brand has partnerships with Gran Turismo and other racing simulation titles but does not leverage these effectively on social media. Gamified engagement mechanics such as prediction challenges during race weekends could significantly increase interactive engagement.</p>
+            <p>Social commerce represents the most significant gap in TGR's digital strategy. No direct purchase pathways from social content to merchandise or vehicle configurators exist. Given the demonstrated purchasing intent within enthusiast automotive communities, integrating Instagram Shopping for merchandise and linked car configurators could drive measurable commercial outcomes from the existing follower base.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 4: Website Evaluation -->
+    <div class="section-page" id="s4">
+        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="section-header">
+            <div class="sec-tag">Section 4 — Website Evaluation</div>
+            <h2>Likert Scale Website Assessment</h2>
+            <p>A 15-item Likert scale evaluation of the Toyota Gazoo Racing website, assessing usability, design, content quality, and engagement mechanisms.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Evaluation Framework</h3>
+            <p>The website evaluation applies a 15-item Likert scale instrument drawing on Nielsen's (2006) ten usability heuristics, Kent and Taylor's (1998) dialogic communication principles, and Dolan et al.'s (2019) social media engagement framework adapted for website contexts. Each item is rated on a 1–5 scale (1 = Strongly Disagree, 5 = Strongly Agree), producing a maximum possible score of 75.</p>
+            <div class="highlight-box">
+                <strong>Total Score: 53/75</strong> — This score indicates that TGR's website performs competently across core usability and design dimensions but has identifiable weaknesses in dialogic engagement and social commerce integration.
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Likert Scale Results</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Evaluation Criterion</th>
+                        <th>Framework</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>The website loads quickly and performs efficiently across devices</td>
+                        <td>Nielsen (2006)</td>
+                        <td><span class="score-badge">4</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Navigation is intuitive and users can locate content easily</td>
+                        <td>Nielsen (2006)</td>
+                        <td><span class="score-badge">4</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>The visual design is consistent with the brand identity</td>
+                        <td>Nielsen (2006)</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Content is up-to-date and regularly refreshed</td>
+                        <td>Kent & Taylor (1998)</td>
+                        <td><span class="score-badge">4</span></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>The website provides opportunities for visitor feedback</td>
+                        <td>Kent & Taylor (1998)</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Contact information and support pathways are clearly accessible</td>
+                        <td>Kent & Taylor (1998)</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>The site includes social media integration and sharing functionality</td>
+                        <td>Dolan et al. (2019)</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>UGC or community content is featured on the website</td>
+                        <td>Dolan et al. (2019)</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Race results and motorsport news are prominently displayed</td>
+                        <td>Nielsen (2006)</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>The website is fully responsive on mobile devices</td>
+                        <td>Nielsen (2006)</td>
+                        <td><span class="score-badge">4</span></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Multimedia content (video, images) enhances the user experience</td>
+                        <td>Nielsen (2006)</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>The website includes a clear call-to-action for product enquiry</td>
+                        <td>Dolan et al. (2019)</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Accessibility features are present for users with disabilities</td>
+                        <td>Nielsen (2006)</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>The website builds dialogue and community through interactive elements</td>
+                        <td>Kent & Taylor (1998)</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>The overall website experience reflects positively on the brand</td>
+                        <td>Nielsen (2006)</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-block">
+            <h3>Score Interpretation</h3>
+            <p>TGR's website score of 53/75 (71%) reflects a strong performance in technical design and brand presentation, with lower scores in dialogic communication and community engagement features. Nielsen (2006) emphasises that usability is foundational — areas scored 4–5 confirm that TGR's site meets core usability standards effectively.</p>
+            <p>Kent and Taylor (1998) identify dialogic loop creation — the ability for websites to facilitate two-way communication — as a critical element of effective digital communication. TGR's scores of 2 across feedback opportunities (item 5) and dialogue-building elements (item 14) represent the most significant areas for improvement.</p>
+            <div class="highlight-box">
+                <strong>Critical Gap:</strong> The score of 2/5 for UGC integration (item 8) directly connects to the UGC trend analysis in Section 5. Featuring community content on the official website would simultaneously address the dialogic communication weakness and capitalise on the existing enthusiast content ecosystem.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 5: UGC Trend -->
+    <div class="section-page" id="s5">
+        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="section-header">
+            <div class="sec-tag">Section 5 — Trend Analysis</div>
+            <h2>User-Generated Content (UGC) Trend</h2>
+            <p>Analysis of the UGC trend from 2020–2024 and its application to Toyota Gazoo Racing's hashtag campaigns #GazooRacing and #GRgram.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>The Rise of UGC: 2020–2024</h3>
+            <p>User-Generated Content (UGC) refers to any form of content — images, videos, text, reviews — created and published by unpaid contributors, typically consumers or brand enthusiasts, rather than by the brand itself (Kaplan and Haenlein, 2010). The period from 2020 to 2024 witnessed an accelerated growth in UGC's strategic importance within digital marketing, driven by three converging factors.</p>
+            <p>First, the COVID-19 pandemic (2020–2021) significantly reduced brands' ability to produce professional content, compelling many to rely on community contributions to maintain digital presence. This crisis-driven adoption normalised UGC integration within brand content strategies that had previously been exclusively professional in production.</p>
+            <p>Second, the rapid growth of TikTok and the subsequent introduction of Instagram Reels in 2020 democratised video content creation, lowering the technical barrier for users to produce high-quality content. The algorithmic structure of these platforms rewards authentic, high-engagement content regardless of production budget, creating conditions where community content can outperform brand-produced material.</p>
+            <p>Third, evolving consumer trust dynamics have increasingly favoured peer recommendation over brand communication. Nielsen (2006) reports that 92% of consumers trust organic user-generated content more than traditional advertising — a finding that has become increasingly cited as brands seek to leverage UGC for credibility amplification.</p>
+            <div class="highlight-box">
+                <strong>Cialdini's (2001) Social Proof:</strong> The psychological principle of social proof — the human tendency to look to others' behaviour as evidence of correct action — provides theoretical grounding for UGC's effectiveness. When prospective TGR customers encounter thousands of enthusiast posts under #GazooRacing, this functions as social proof of the brand's desirability and community vitality.
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>TGR's UGC Performance: Hashtag Analysis</h3>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">400K+</span>
+                    <div class="stat-label">#GazooRacing Posts</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">68K+</span>
+                    <div class="stat-label">#GRgram Posts</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">9.3M</span>
+                    <div class="stat-label">Instagram Followers</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1%</span>
+                    <div class="stat-label">Active UGC Creators</div>
+                </div>
+            </div>
+            <p>The #GazooRacing hashtag has accumulated over 400,000 posts on Instagram, representing a substantial volume of organic community content. This content spans multiple categories including car photography, track day footage, owner modifications, race attendance experiences, and merchandise documentation.</p>
+            <p>The #GRgram hashtag, launched by TGR as a branded community tag, has generated 68,000+ posts. While significantly smaller in volume than the organic #GazooRacing tag, #GRgram represents a more brand-adjacent community whose content directly reflects GR model ownership and enthusiasm.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Application of Nielsen's 90-9-1 Rule</h3>
+            <p>Nielsen's (2006) 90-9-1 rule provides a useful lens for interpreting TGR's UGC data. The rule proposes that within any online community, 90% of users are lurkers who consume content without contributing, 9% are occasional contributors who interact with existing content, and 1% are active creators who produce the majority of community content.</p>
+            <p>Applying this to TGR's 9.3 million Instagram followers, the model would predict approximately 93,000 active content creators — a figure that aligns with the combined hashtag volume when considered across multiple platforms and over multiple years. This suggests TGR's UGC ecosystem is performing within expected parameters for a community of its size.</p>
+            <p>However, the 90-9-1 framework also highlights an opportunity: the 9% occasional contributor segment (approximately 837,000 followers) represents a vast pool of users who are engaged enough to interact but have not yet been activated as content creators. Targeted UGC campaigns and community incentivisation could convert a meaningful proportion of this segment into active producers, significantly expanding the brand's organic content volume.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 6: Recommendations -->
+    <div class="section-page" id="s6">
+        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="section-header">
+            <div class="sec-tag">Section 6 — Recommendations</div>
+            <h2>Strategic Digital Marketing Recommendations</h2>
+            <p>Actionable recommendations for Toyota Gazoo Racing to improve digital marketing performance, community engagement, and UGC strategy.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Recommendation 1: Formalise a UGC Incentivisation Programme</h3>
+            <p>TGR should establish a structured programme to incentivise and reward community content creation. Currently, the brand benefits passively from organic UGC without actively cultivating or rewarding the behaviour. A formalised programme would include monthly community spotlight features on official channels, exclusive access opportunities (factory visits, race day passes) for top contributors, and digital badges or recognition systems for consistent creators.</p>
+            <p>This directly addresses the gap identified in the Ladder of Engagement analysis (Section 2), targeting the movement of users from rung 3 (likers) to rung 5 (producers). Cialdini's (2001) social proof principle suggests that officially featuring community content will further encourage additional participation through observational learning — users observing peers being featured will be motivated to create content themselves.</p>
+            <div class="highlight-box">
+                <strong>Implementation:</strong> Launch a quarterly #GRgram Community Award, featuring the top 10 community submissions on TGR's official Instagram with full credit attribution. This creates aspirational motivation for the 9% occasional contributor segment identified through Nielsen's (2006) 90-9-1 framework.
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Recommendation 2: Integrate UGC into the Official Website</h3>
+            <p>The website evaluation (Section 4) identified a score of 2/5 for UGC integration (item 8), representing one of the lowest-scoring criteria. TGR should introduce a dedicated community gallery section on the official website, dynamically pulling approved #GRgram content via Instagram's API. This would simultaneously address the dialogic communication weakness identified through Kent and Taylor's (1998) framework and leverage the existing enthusiast content ecosystem.</p>
+            <p>Dolan et al. (2019) highlight that interactive website elements that feature community participation significantly increase time-on-site and return visit frequency — key metrics for sustaining digital brand engagement beyond initial awareness.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Recommendation 3: Develop Social Commerce Capability</h3>
+            <p>TGR's Four Zones analysis (Section 3) identified social commerce as the weakest zone with significant untapped commercial potential. The recommendation is to implement Instagram Shopping for GR merchandise, with shoppable tags embedded directly within product-featuring social content. Additionally, linking social posts to a streamlined vehicle configurator would reduce friction in the consumer journey from social media interest to dealership enquiry.</p>
+            <p>The enthusiast community demonstrated through hashtag volumes represents an audience with demonstrated purchase intent — the 400,000+ #GazooRacing posts include substantial volumes of car ownership content, confirming that TGR's social audience includes active buyers. Providing direct purchase pathways from social content represents a logical commercial development.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Recommendation 4: Enhance Two-Way Dialogue on Social Platforms</h3>
+            <p>Community management investment should be increased to improve response rates to comments, implement regular Q&A Story sessions with drivers and engineers, and introduce race weekend interactive features such as prediction polls and live commentary engagement. These mechanics directly address the Ladder of Engagement gap between rung 3 (likers) and rung 4 (commenters) by providing structured reasons for users to engage in written interaction.</p>
+            <ul>
+                <li>Weekly Instagram Q&A Stories featuring TGR engineers answering community technical questions</li>
+                <li>Race weekend prediction polls to drive pre-event engagement</li>
+                <li>Live Reels or Instagram Live coverage during key motorsport events</li>
+                <li>Dedicated community management resource with commitment to responding to top comments within 24 hours</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 7: References -->
+    <div class="section-page" id="s7">
+        <button class="back-btn" onclick="goBack()">← Back to Contents</button>
+        <div class="section-header">
+            <div class="sec-tag">Section 7 — References</div>
+            <h2>Harvard Reference List</h2>
+            <p>Full bibliography of all academic and industry sources cited throughout this e-portfolio.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Academic & Industry References</h3>
+            <div class="reference-item">Chaffey, D. and Smith, P.R. (2022) <em>Digital Marketing Excellence: Planning, Optimising and Integrating Online Marketing.</em> 6th edn. Abingdon: Routledge.</div>
+            <div class="reference-item">Cialdini, R.B. (2001) <em>Influence: Science and Practice.</em> 4th edn. Boston: Allyn & Bacon.</div>
+            <div class="reference-item">Dolan, R., Conduit, J., Frethey-Bentham, C., Fahy, J. and Goodman, S. (2019) 'Social media engagement behaviour: A uses and gratifications perspective', <em>Journal of Strategic Marketing,</em> 27(3), pp. 261–277.</div>
+            <div class="reference-item">Kaplan, A.M. and Haenlein, M. (2010) 'Users of the world, unite! The challenges and opportunities of Social Media', <em>Business Horizons,</em> 53(1), pp. 59–68.</div>
+            <div class="reference-item">Kent, M.L. and Taylor, M. (1998) 'Building dialogic relationships through the World Wide Web', <em>Public Relations Review,</em> 24(3), pp. 321–334.</div>
+            <div class="reference-item">Meta (2024) <em>Instagram Monthly Active Users Report.</em> Available at: https://investor.fb.com (Accessed: 1 January 2025).</div>
+            <div class="reference-item">Nielsen, J. (2006) <em>Participation Inequality: Encouraging More Users to Contribute.</em> Nielsen Norman Group. Available at: https://www.nngroup.com/articles/participation-inequality/ (Accessed: 1 January 2025).</div>
+            <div class="reference-item">Smith, C. (2012) 'Instagram reaches 25,000 users in one day', <em>Digital Trends,</em> 7 October. Available at: https://www.digitaltrends.com (Accessed: 1 January 2025).</div>
+            <div class="reference-item">Toyota Gazoo Racing (2024) <em>Official Toyota Gazoo Racing Website.</em> Available at: https://gazooracing.com (Accessed: 1 January 2025).</div>
+            <div class="reference-item">Tuten, T.L. and Solomon, M.R. (2020) <em>Social Media Marketing.</em> 4th edn. London: SAGE Publications.</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    MKT3039 Digital Marketing E-Portfolio &nbsp;|&nbsp; Toyota Gazoo Racing Analysis &nbsp;|&nbsp; University of Northampton
+</div>
+
+<script>
+    function showSection(id) {
+        document.getElementById('indexPage').style.display = 'none';
+        document.querySelectorAll('.section-page').forEach(function(page) {
+            page.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0, 0);
+        updateProgress(id);
+    }
+
+    function goBack() {
+        document.querySelectorAll('.section-page').forEach(function(page) {
+            page.classList.remove('active');
+        });
+        document.getElementById('indexPage').style.display = 'block';
+        window.scrollTo(0, 0);
+        document.getElementById('progressBar').style.width = '0%';
+    }
+
+    function updateProgress(id) {
+        var sections = ['s1','s2','s3','s4','s5','s6','s7'];
+        var index = sections.indexOf(id);
+        var percent = ((index + 1) / sections.length) * 100;
+        document.getElementById('progressBar').style.width = percent + '%';
+    }
+</script>
+
+</body>
+</html>
