@@ -229,74 +229,72 @@
             display: block;
         }
 
-        /* Navigation Button Row */
-        .nav-btn-row {
+        /* NAVIGATION BUTTONS — FIXED & VISIBLE */
+        .nav-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
             margin-bottom: 30px;
-            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .back-btn {
-            background: transparent;
-            border: 1px solid #333333;
-            color: #cccccc;
-            padding: 10px 22px;
-            border-radius: 4px;
+        .nav-row.bottom {
+            margin-top: 40px;
+            margin-bottom: 0;
+            padding-top: 30px;
+            border-top: 2px solid #2a2a2a;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             transition: all 0.3s ease;
+            border: 2px solid;
+            font-family: inherit;
         }
 
-        .back-btn:hover {
+        .back-nav {
+            background: transparent;
+            border-color: #555555;
+            color: #cccccc;
+        }
+
+        .back-nav:hover {
+            border-color: #eb0a1e;
+            color: #eb0a1e;
+            background: rgba(235, 10, 30, 0.1);
+        }
+
+        .next-nav {
+            background: #eb0a1e;
+            border-color: #eb0a1e;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(235, 10, 30, 0.4);
+        }
+
+        .next-nav:hover {
+            background: #ff1a2e;
+            border-color: #ff1a2e;
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(235, 10, 30, 0.6);
+        }
+
+        .finish-nav {
+            background: transparent;
             border-color: #eb0a1e;
             color: #eb0a1e;
         }
 
-        .next-btn {
-            background: #eb0a1e;
-            border: 1px solid #eb0a1e;
-            color: #ffffff;
-            padding: 10px 22px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .next-btn:hover {
-            background: #cc0818;
-            border-color: #cc0818;
-            transform: translateX(3px);
-        }
-
-        .next-btn.finish-btn {
-            background: transparent;
-            border: 1px solid #eb0a1e;
-            color: #eb0a1e;
-        }
-
-        .next-btn.finish-btn:hover {
+        .finish-nav:hover {
             background: #eb0a1e;
             color: #ffffff;
-            transform: none;
-        }
-
-        /* Bottom Navigation Row */
-        .bottom-nav-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid #2a2a2a;
-            gap: 12px;
         }
 
         .section-header {
@@ -423,7 +421,7 @@
             margin-top: 4px;
         }
 
-        /* Likert Table */
+        /* Likert Table — FIXED SCORE ALIGNMENT */
         .styled-table {
             width: 100%;
             border-collapse: collapse;
@@ -442,12 +440,23 @@
             font-size: 0.75rem;
         }
 
+        .styled-table th.score-col {
+            text-align: center;
+            width: 80px;
+        }
+
         .styled-table td {
             padding: 12px 16px;
             border-bottom: 1px solid #222222;
             color: #cccccc;
-            vertical-align: top;
+            vertical-align: middle;
             line-height: 1.7;
+        }
+
+        .styled-table td.score-cell {
+            text-align: center;
+            vertical-align: middle;
+            width: 80px;
         }
 
         .styled-table tr:nth-child(even) td {
@@ -459,12 +468,17 @@
         }
 
         .score-badge {
+            display: inline-block;
             background: #eb0a1e;
             color: white;
-            padding: 2px 10px;
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50%;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+            margin: 0 auto;
         }
 
         /* Zone Cards */
@@ -580,9 +594,8 @@
             .main-container { padding: 20px 15px; }
             .welcome-banner { padding: 25px 20px; }
             .sections-grid { grid-template-columns: 1fr; }
-            .nav-btn-row { flex-direction: column; align-items: stretch; }
-            .bottom-nav-row { flex-direction: column; align-items: stretch; }
-            .next-btn, .back-btn { text-align: center; justify-content: center; }
+            .nav-row { flex-direction: column; }
+            .nav-btn { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -680,11 +693,11 @@
         </div>
     </div>
 
-    <!-- SECTION 1: Introduction -->
+    <!-- SECTION 1 -->
     <div class="section-page" id="s1">
-        <div class="nav-btn-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s2')">Next: Instagram History &nbsp;→</button>
+        <div class="nav-row">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s2')">Next Section →</button>
         </div>
 
         <div class="section-header">
@@ -737,17 +750,17 @@
             </div>
         </div>
 
-        <div class="bottom-nav-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s2')">Next: Instagram History &nbsp;→</button>
+        <div class="nav-row bottom">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s2')">Next Section →</button>
         </div>
     </div>
 
-    <!-- SECTION 2: Instagram History -->
+    <!-- SECTION 2 -->
     <div class="section-page" id="s2">
-        <div class="nav-btn-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s3')">Next: Four Zones Analysis &nbsp;→</button>
+        <div class="nav-row">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s3')">Next Section →</button>
         </div>
 
         <div class="section-header">
@@ -814,17 +827,17 @@
             <p>To maximise the ladder's potential, TGR would benefit from implementing formalised UGC campaigns, featuring community content in official channels, and introducing engagement mechanics such as challenges, competitions, and community spotlights that incentivise users to climb from passive consumption toward active content production.</p>
         </div>
 
-        <div class="bottom-nav-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s3')">Next: Four Zones Analysis &nbsp;→</button>
+        <div class="nav-row bottom">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s3')">Next Section →</button>
         </div>
     </div>
 
-    <!-- SECTION 3: Four Zones -->
+    <!-- SECTION 3 -->
     <div class="section-page" id="s3">
-        <div class="nav-btn-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s4')">Next: Website Evaluation &nbsp;→</button>
+        <div class="nav-row">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s4')">Next Section →</button>
         </div>
 
         <div class="section-header">
@@ -880,17 +893,17 @@
             <p>Social commerce represents the most significant gap in TGR's digital strategy. No direct purchase pathways from social content to merchandise or vehicle configurators exist. Given the demonstrated purchasing intent within enthusiast automotive communities, integrating Instagram Shopping for merchandise and linked car configurators could drive measurable commercial outcomes from the existing follower base.</p>
         </div>
 
-        <div class="bottom-nav-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s4')">Next: Website Evaluation &nbsp;→</button>
+        <div class="nav-row bottom">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s4')">Next Section →</button>
         </div>
     </div>
 
-    <!-- SECTION 4: Website Evaluation -->
+    <!-- SECTION 4 -->
     <div class="section-page" id="s4">
-        <div class="nav-btn-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s5')">Next: UGC Trend Analysis &nbsp;→</button>
+        <div class="nav-row">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s5')">Next Section →</button>
         </div>
 
         <div class="section-header">
@@ -915,7 +928,7 @@
                         <th>#</th>
                         <th>Evaluation Criterion</th>
                         <th>Framework</th>
-                        <th>Score</th>
+                        <th class="score-col">Score</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -923,91 +936,91 @@
                         <td>1</td>
                         <td>The website loads quickly and performs efficiently across devices</td>
                         <td>Nielsen (2006)</td>
-                        <td><span class="score-badge">4</span></td>
+                        <td class="score-cell"><span class="score-badge">4</span></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Navigation is intuitive and users can locate content easily</td>
                         <td>Nielsen (2006)</td>
-                        <td><span class="score-badge">4</span></td>
+                        <td class="score-cell"><span class="score-badge">4</span></td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>The visual design is consistent with the brand identity</td>
                         <td>Nielsen (2006)</td>
-                        <td>5</td>
+                        <td class="score-cell"><span class="score-badge">5</span></td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>Content is up-to-date and regularly refreshed</td>
                         <td>Kent & Taylor (1998)</td>
-                        <td><span class="score-badge">4</span></td>
+                        <td class="score-cell"><span class="score-badge">4</span></td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td>The website provides opportunities for visitor feedback</td>
                         <td>Kent & Taylor (1998)</td>
-                        <td>2</td>
+                        <td class="score-cell"><span class="score-badge">2</span></td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>Contact information and support pathways are clearly accessible</td>
                         <td>Kent & Taylor (1998)</td>
-                        <td>3</td>
+                        <td class="score-cell"><span class="score-badge">3</span></td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td>The site includes social media integration and sharing functionality</td>
                         <td>Dolan et al. (2019)</td>
-                        <td>3</td>
+                        <td class="score-cell"><span class="score-badge">3</span></td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td>UGC or community content is featured on the website</td>
                         <td>Dolan et al. (2019)</td>
-                        <td>2</td>
+                        <td class="score-cell"><span class="score-badge">2</span></td>
                     </tr>
                     <tr>
                         <td>9</td>
                         <td>Race results and motorsport news are prominently displayed</td>
                         <td>Nielsen (2006)</td>
-                        <td>5</td>
+                        <td class="score-cell"><span class="score-badge">5</span></td>
                     </tr>
                     <tr>
                         <td>10</td>
                         <td>The website is fully responsive on mobile devices</td>
                         <td>Nielsen (2006)</td>
-                        <td><span class="score-badge">4</span></td>
+                        <td class="score-cell"><span class="score-badge">4</span></td>
                     </tr>
                     <tr>
                         <td>11</td>
                         <td>Multimedia content (video, images) enhances the user experience</td>
                         <td>Nielsen (2006)</td>
-                        <td>5</td>
+                        <td class="score-cell"><span class="score-badge">5</span></td>
                     </tr>
                     <tr>
                         <td>12</td>
                         <td>The website includes a clear call-to-action for product enquiry</td>
                         <td>Dolan et al. (2019)</td>
-                        <td>3</td>
+                        <td class="score-cell"><span class="score-badge">3</span></td>
                     </tr>
                     <tr>
                         <td>13</td>
                         <td>Accessibility features are present for users with disabilities</td>
                         <td>Nielsen (2006)</td>
-                        <td>3</td>
+                        <td class="score-cell"><span class="score-badge">3</span></td>
                     </tr>
                     <tr>
                         <td>14</td>
                         <td>The website builds dialogue and community through interactive elements</td>
                         <td>Kent & Taylor (1998)</td>
-                        <td>2</td>
+                        <td class="score-cell"><span class="score-badge">2</span></td>
                     </tr>
                     <tr>
                         <td>15</td>
                         <td>The overall website experience reflects positively on the brand</td>
                         <td>Nielsen (2006)</td>
-                        <td>5</td>
+                        <td class="score-cell"><span class="score-badge">5</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -1022,17 +1035,17 @@
             </div>
         </div>
 
-        <div class="bottom-nav-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s5')">Next: UGC Trend Analysis &nbsp;→</button>
+        <div class="nav-row bottom">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s5')">Next Section →</button>
         </div>
     </div>
 
-    <!-- SECTION 5: UGC Trend -->
+    <!-- SECTION 5 -->
     <div class="section-page" id="s5">
-        <div class="nav-btn-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s6')">Next: Recommendations &nbsp;→</button>
+        <div class="nav-row">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s6')">Next Section →</button>
         </div>
 
         <div class="section-header">
@@ -1083,17 +1096,17 @@
             <p>However, the 90-9-1 framework also highlights an opportunity: the 9% occasional contributor segment (approximately 837,000 followers) represents a vast pool of users who are engaged enough to interact but have not yet been activated as content creators. Targeted UGC campaigns and community incentivisation could convert a meaningful proportion of this segment into active producers, significantly expanding the brand's organic content volume.</p>
         </div>
 
-        <div class="bottom-nav-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s6')">Next: Recommendations &nbsp;→</button>
+        <div class="nav-row bottom">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s6')">Next Section →</button>
         </div>
     </div>
 
-    <!-- SECTION 6: Recommendations -->
+    <!-- SECTION 6 -->
     <div class="section-page" id="s6">
-        <div class="nav-btn-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s7')">Next: References &nbsp;→</button>
+        <div class="nav-row">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s7')">Next Section →</button>
         </div>
 
         <div class="section-header">
@@ -1134,17 +1147,17 @@
             </ul>
         </div>
 
-        <div class="bottom-nav-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn" onclick="showSection('s7')">Next: References &nbsp;→</button>
+        <div class="nav-row bottom">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn next-nav" onclick="showSection('s7')">Next Section →</button>
         </div>
     </div>
 
-    <!-- SECTION 7: References -->
+    <!-- SECTION 7 -->
     <div class="section-page" id="s7">
-        <div class="nav-btn-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn finish-btn" onclick="goBack()">✓ Return to Contents</button>
+        <div class="nav-row">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn finish-nav" onclick="goBack()">✓ Finish Portfolio</button>
         </div>
 
         <div class="section-header">
@@ -1167,9 +1180,9 @@
             <div class="reference-item">Tuten, T.L. and Solomon, M.R. (2020) <em>Social Media Marketing.</em> 4th edn. London: SAGE Publications.</div>
         </div>
 
-        <div class="bottom-nav-row">
-            <button class="back-btn" onclick="goBack()">← Back to Contents</button>
-            <button class="next-btn finish-btn" onclick="goBack()">✓ Return to Contents</button>
+        <div class="nav-row bottom">
+            <button class="nav-btn back-nav" onclick="goBack()">← Back to Contents</button>
+            <button class="nav-btn finish-nav" onclick="goBack()">✓ Finish Portfolio</button>
         </div>
     </div>
 
