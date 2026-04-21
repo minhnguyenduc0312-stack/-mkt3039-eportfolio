@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKT 3039 Digital Marketing E-Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border-bottom: 3px solid #eb0a1e;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .header h2 {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #eb0a1e;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 0.85rem;
+            color: #888888;
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+
+        /* TOYOTA STRIPE */
+        .toyota-stripe {
+            height: 4px;
+            background: linear-gradient(90deg, #eb0a1e, #ff4444, #eb0a1e);
+            animation: stripeGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes stripeGlow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* INDEX CONTAINER */
+        .index-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .index-title {
+            text-align: center;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #eb0a1e;
+            margin-bottom: 10px;
+        }
+
+        .index-subtitle {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666666;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        /* INDEX CARDS */
+        .index-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .index-card {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a1a, #222222);
+            border: 1px solid #2d2d2d;
+            border-left: 4px solid #eb0a1e;
+            border-radius: 8px;
+            padding: 20px 28px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .index-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(235, 10, 30, 0.08), transparent);
+            transition: left 0.4s ease;
+        }
+
+        .index-card:hover::before {
+            left: 100%;
+        }
+
+        .index-card:hover {
+            border-left-color: #ff4444;
+            background: linear-gradient(135deg, #222222, #2a2a2a);
+            transform: translateX(6px);
+            box-shadow: -4px 0 20px rgba(235, 10, 30, 0.3);
+        }
+
+        .section-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #eb0a1e;
+            min-width: 60px;
+            opacity: 0.8;
+        }
+
+        .section-info {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .section-desc {
+            font-size: 0.78rem;
+            color: #888888;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .section-arrow {
+            font-size: 1.2rem;
+            color: #eb0a1e;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateX(-10px);
+        }
+
+        .index-card:hover .section-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* SECTION PAGES */
+        .section-page {
+            display: none;
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-page.active {
+            display: block;
+        }
+
+        .section-header {
+            border-left: 4px solid #eb0a1e;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .section-header p {
+            color: #888888;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        .content-placeholder {
+            background: #1a1a1a;
+            border: 1px dashed #333333;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: #555555;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            border: 1px solid #eb0a1e;
+            color: #eb0a1e;
+            padding: 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #eb0a1e;
+            color: #ffffff;
+        }
+
+        /* PROGRESS BAR */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #eb0a1e;
+            width: 0%;
+            transition: width 0.3s ease;
+            z-index: 999;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #444444;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 80px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.4rem; }
+            .section-number { font-size: 1.5rem; min-width: 40px; }
+            .section-title { font-size: 0.9rem; }
+            .index-card { padding: 16px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Digital Marketing E-Portfolio</h1>
+        <h2>Toyota Gazoo Racing — Case Study</h2>
+        <p>MKT 3039 &nbsp;|&nbsp; University of Northampton &nbsp;|&nbsp; 2024</p>
+    </div>
+    <div class="toyota-stripe"></div>
+
+    <!-- INDEX PAGE -->
+    <div class="index-container" id="indexPage">
+        <p class="index-title">Table of Contents</p>
+        <p class="index-subtitle">Select a section to navigate</p>
+
+        <div class="index-grid">
+
+            <a class="index-card" onclick="showSection('s1')">
+                <div class="section-number">01</div>
+                <div class="section-info">
+                    <div class="section-title">Introduction</div>
+                    <div class="section-desc">Portfolio overview, objectives and structure</div>
+                </div>
+                <div class="section-arrow">→</div>
+            </a>
+
+            <a class="index-card" onclick="showSection('s2')">
+                <div class="section-number">02</div>
+                <div class="section-info">
+                    <div class="section-title">Instagram Overview</div>
+                    <div class="section-desc">Platform history, growth and the Ladder of Engagement</div>
+                </div>
+                <div class="section-arrow">→</div>
+            </a>
+
+            <a class="index-card" onclick="showSection('s3')">
+                <div class="section-number">03</div>
+                <div class="section-info">
+                    <div class="section-title">TGR Social Media Evaluation</div>
+                    <div class="section-desc">Four Zones framework and Ladder of Engagement analysis</div>
+                </div>
+                <div class="section-arrow">→</div>
+            </a>
+
+            <a class="index-card" onclick="showSection('s4')">
+                <div class="section-number">04</div>
+                <div class="section-info">
+                    <div class="section-title">Website Evaluation</div>
+                    <div class="section-desc">15-item Likert scale checklist and justification</div>
+                </div>
+                <div class="section-arrow">→</div>
+            </a>
+
+            <a class="index-card" onclick="showSection('s5')">
+                <div class="section-number">05</div>
+                <div class="section-info">
+                    <div class="section-title">Trend Analysis</div>
+                    <div class="section-desc">UGC and community-driven campaigns 2020–2024</div>
+                </div>
+                <div class="section-arrow">→</div>
+            </a>
+
+            <a class="index-card" onclick="showSection('s6')">
+                <div class="section-number">06</div>
+                <div class="section-info">
+                    <div class="section-title">Conclusion</div>
+                    <div class="section-desc">Key findings, limitations and future recommendations</div>
+                </div>
+                <div class="section-arrow">→</div>
+            </a>
+
+            <a class="index-card" onclick="showSection('s7')">
+                <div class="section-number">07</div>
+                <div class="section-info">
+                    <div class="section-title">Reference List</div>
+                    <div class="section-desc">Full Harvard-formatted bibliography</div>
+                </div>
+                <div class="section-arrow">→</div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- SECTION PAGES -->
+
+    <div class="section-page" id="s1">
+        <button class="back-btn" onclick="goBack()">← Back to Index</button>
+        <div class="section-header">
+            <h2>Section 1 — Introduction</h2>
+            <p>Portfolio overview, objectives and structure</p>
+        </div>
+        <div class="content-placeholder">[ Insert Section 1 content here ]</div>
+    </div>
+
+    <div class="section-page" id="s2">
+        <button class="back-btn" onclick="goBack()">← Back to Index</button>
+        <div class="section-header">
+            <h2>Section 2 — Instagram Overview</h2>
+            <p>Platform history, growth and the Ladder of Engagement</p>
+        </div>
+        <div class="content-placeholder">[ Insert Section 2 content here ]</div>
+    </div>
+
+    <div class="section-page" id="s3">
+        <button class="back-btn" onclick="goBack()">← Back to Index</button>
+        <div class="section-header">
+            <h2>Section 3 — TGR Social Media Evaluation</h2>
+            <p>Four Zones framework and Ladder of Engagement analysis</p>
+        </div>
+        <div class="content-placeholder">[ Insert Section 3 content here ]</div>
+    </div>
+
+    <div class="section-page" id="s4">
+        <button class="back-btn" onclick="goBack()">← Back to Index</button>
+        <div class="section-header">
+            <h2>Section 4 — Website Evaluation</h2>
+            <p>15-item Likert scale checklist and justification</p>
+        </div>
+        <div class="content-placeholder">[ Insert Section 4 content here ]</div>
+    </div>
+
+    <div class="section-page" id="s5">
+        <button class="back-btn" onclick="goBack()">← Back to Index</button>
+        <div class="section-header">
+            <h2>Section 5 — Trend Analysis</h2>
+            <p>UGC and community-driven campaigns 2020–2024</p>
+        </div>
+        <div class="content-placeholder">[ Insert Section 5 content here ]</div>
+    </div>
+
+    <div class="section-page" id="s6">
+        <button class="back-btn" onclick="goBack()">← Back to Index</button>
+        <div class="section-header">
+            <h2>Section 6 — Conclusion</h2>
+            <p>Key findings, limitations and future recommendations</p>
+        </div>
+        <div class="content-placeholder">[ Insert Section 6 content here ]</div>
+    </div>
+
+    <div class="section-page" id="s7">
+        <button class="back-btn" onclick="goBack()">← Back to Index</button>
+        <div class="section-header">
+            <h2>Section 7 — Reference List</h2>
+            <p>Full Harvard-formatted bibliography</p>
+        </div>
+        <div class="content-placeholder">[ Insert Reference List here ]</div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        MKT 3039 Digital Marketing E-Portfolio &nbsp;|&nbsp; University of Northampton &nbsp;|&nbsp; Toyota Gazoo Racing Case Study
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function showSection(id) {
+            // Hide index
+            document.getElementById('indexPage').style.display = 'none';
+
+            // Hide all sections
+            document.querySelectorAll('.section-page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(id).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update progress bar
+            const sections = ['s1','s2','s3','s4','s5','s6','s7'];
+            const index = sections.indexOf(id) + 1;
+            const progress = (index / sections.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function goBack() {
+            // Hide all sections
+            document.querySelectorAll('.section-page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show index
+            document.getElementById('indexPage').style.display = 'block';
+
+            // Reset progress bar
+            document.getElementById('progressBar').style.width = '0%';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
