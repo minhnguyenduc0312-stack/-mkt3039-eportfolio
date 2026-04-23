@@ -1,558 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MKT3039 Digital Marketing E-Portfolio | Toyota Gazoo Racing | Minh Nguyen Duc</title>
-<style>
-/* ===== RESET & BASE ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: #111111;
-    color: #e5e5e5;
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-/* ===== HEADER ===== */
-header {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    border-bottom: 3px solid #eb0a1e;
-    padding: 40px 60px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(235, 10, 30, 0.2);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
+/* ===== NAVIGATION BUTTONS ===== */
+.nav-btn {
+    display: inline-flex;
     align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.header-left { flex: 1; min-width: 300px; }
-
-h1 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
-
-.header-meta {
-    color: #999;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    font-weight: 500;
-}
-
-.student-info {
+    gap: 10px;
+    background: transparent;
     color: #eb0a1e;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-top: 10px;
-    text-transform: uppercase;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.tgr-logo {
-    height: 90px;
-    width: auto;
-    max-width: 240px;
-    object-fit: contain;
-    background: #ffffff;
-    padding: 8px 14px;
-    border-radius: 6px;
     border: 2px solid #eb0a1e;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tgr-logo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(235, 10, 30, 0.6);
-}
-
-/* ===== NAVIGATION ===== */
-nav {
-    background: #0a0a0a;
-    padding: 15px 60px;
-    border-bottom: 1px solid #2a2a2a;
-    position: sticky;
-    top: 180px;
-    z-index: 999;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-nav a {
-    color: #e5e5e5;
-    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
     font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 8px 14px;
-    border-radius: 4px;
+    cursor: pointer;
     transition: all 0.3s ease;
+    font-family: inherit;
+    text-decoration: none;
 }
 
-nav a:hover {
+.nav-btn.back-btn {
+    margin-bottom: 30px;
+}
+
+.nav-btn.back-btn:hover {
     background: #eb0a1e;
-    color: #fff;
-}
-
-/* ===== MAIN CONTAINER ===== */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 40px;
-}
-
-section {
-    background: #1a1a1a;
-    border-radius: 12px;
-    padding: 50px;
-    margin-bottom: 40px;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: border-color 0.3s ease;
-}
-
-section:hover { border-color: #eb0a1e; }
-
-h2 {
     color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    border-left: 5px solid #eb0a1e;
-    padding-left: 15px;
+    transform: translateX(-5px);
 }
 
-.section-subtitle {
+.nav-btn.next-btn {
+    background: #eb0a1e;
+    color: #ffffff;
+}
+
+.nav-btn.next-btn:hover {
+    background: #ff1f34;
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(235, 10, 30, 0.4);
+}
+
+.nav-btn.index-btn {
+    background: transparent;
     color: #eb0a1e;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    text-transform: uppercase;
 }
 
-h3 {
-    color: #ffffff;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin: 25px 0 15px;
-    letter-spacing: 1px;
-}
-
-h4 {
-    color: #eb0a1e;
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 20px 0 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-p {
-    color: #cccccc;
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-ul, ol { margin: 15px 0 15px 25px; color: #cccccc; }
-li { margin-bottom: 10px; }
-
-strong { color: #ffffff; font-weight: 700; }
-
-a { color: #eb0a1e; text-decoration: none; transition: color 0.3s ease; }
-a:hover { color: #ff3d4f; text-decoration: underline; }
-
-/* ===== IMAGES ===== */
-.portfolio-image {
-    width: 100%;
-    max-width: 800px;
-    display: block;
-    margin: 25px auto;
-    border-radius: 8px;
-    border: 2px solid #2a2a2a;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.portfolio-image:hover {
-    transform: scale(1.02);
-    border-color: #eb0a1e;
-}
-
-.image-caption {
-    text-align: center;
-    color: #888;
-    font-size: 0.85rem;
-    font-style: italic;
-    margin-top: 10px;
-    margin-bottom: 25px;
-}
-
-/* ===== TABLES ===== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    background: #0f0f0f;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-th {
+.nav-btn.index-btn:hover {
     background: #eb0a1e;
     color: #ffffff;
-    padding: 14px;
-    text-align: left;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-weight: 700;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(235, 10, 30, 0.4);
 }
 
-td {
-    padding: 14px;
-    border-bottom: 1px solid #2a2a2a;
-    color: #cccccc;
-    font-size: 0.95rem;
+.section-footer-nav {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #2a2a2a;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-
-tr:last-child td { border-bottom: none; }
-tr:hover td { background: #1f1f1f; color: #ffffff; }
-
-/* ===== HIGHLIGHT BOXES ===== */
-.highlight-box {
-    background: linear-gradient(135deg, #1f0508 0%, #0f0203 100%);
-    border-left: 4px solid #eb0a1e;
-    padding: 20px 25px;
-    margin: 25px 0;
-    border-radius: 6px;
-}
-
-.highlight-box p:last-child { margin-bottom: 0; }
-
-.score-box {
-    background: #eb0a1e;
-    color: #ffffff;
-    padding: 15px 25px;
-    border-radius: 6px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 20px 0;
-    letter-spacing: 2px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    background: #000000;
-    color: #888;
-    text-align: center;
-    padding: 40px;
-    border-top: 3px solid #eb0a1e;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-}
-
-footer strong { color: #eb0a1e; }
-
-/* ===== REFERENCES ===== */
-.references-list {
-    list-style: none;
-    margin-left: 0;
-}
-
-.references-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid #2a2a2a;
-    padding-left: 25px;
-    text-indent: -25px;
-    font-size: 0.95rem;
-    color: #bbbbbb;
-}
-
-.references-list li:last-child { border-bottom: none; }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    header { padding: 25px 20px; }
-    .header-content { flex-direction: column; align-items: flex-start; text-align: left; }
-    h1 { font-size: 1.4rem; }
-    .tgr-logo { height: 70px; margin-top: 15px; }
-    nav { padding: 12px 20px; top: auto; position: relative; }
-    nav ul { gap: 10px; }
-    nav a { font-size: 0.75rem; padding: 6px 10px; }
-    main { padding: 30px 20px; }
-    section { padding: 30px 20px; }
-    h2 { font-size: 1.4rem; }
-    table { font-size: 0.85rem; }
-    th, td { padding: 10px; }
-}
-</style>
-</head>
-<body>
-
-<!-- ===== HEADER ===== -->
-<header>
-    <div class="header-content">
-        <div class="header-left">
-            <h1>MKT3039 Digital Marketing</h1>
-            <div class="header-meta">UNIVERSITY OF NORTHAMPTON &nbsp;|&nbsp; E-PORTFOLIO &nbsp;|&nbsp; 2025/26</div>
-            <div class="student-info">Minh Nguyen Duc &nbsp;|&nbsp; Student ID: 25831986</div>
-        </div>
-        <div class="header-right">
-            <img src="images/Gazoo-Racing-Logo.jpg" alt="Toyota Gazoo Racing Logo" class="tgr-logo">
-        </div>
-    </div>
-</header>
-
-<!-- ===== NAVIGATION ===== -->
-<nav>
-    <ul>
-        <li><a href="#overview">01 Brand Overview</a></li>
-        <li><a href="#history">02 Instagram History</a></li>
-        <li><a href="#zones">03 Four Zones</a></li>
-        <li><a href="#likert">04 Website Evaluation</a></li>
-        <li><a href="#ugc">05 UGC Trends</a></li>
-        <li><a href="#recommendations">06 Recommendations</a></li>
-        <li><a href="#references">07 References</a></li>
-    </ul>
-</nav>
-
-<!-- ===== MAIN CONTENT ===== -->
-<main>
-
-<!-- SECTION 1: BRAND OVERVIEW -->
-<section id="overview">
-    <h2>01 — Brand Overview</h2>
-    <div class="section-subtitle">Toyota Gazoo Racing (TGR)</div>
-    <p>Toyota Gazoo Racing (TGR) is the global motorsport and high-performance division of Toyota Motor Corporation, founded in 2007 by master driver Hiromu Naruse and current Toyota Chairman Akio Toyoda (Toyota Gazoo Racing, 2025). The brand represents Toyota's philosophy of "making ever-better cars" through the crucible of motorsport competition, drawing its name from the Japanese word "gazoo" (画像), meaning "image" or "picture archive."</p>
-    
-    <p>TGR competes at the highest levels of global motorsport, including the FIA World Endurance Championship (WEC), World Rally Championship (WRC), and Dakar Rally. Its consumer-facing GR product line — featuring vehicles like the GR Yaris, GR Corolla, and GR Supra — translates motorsport engineering directly into road cars, targeting driving enthusiasts and younger demographics (Statista, 2025).</p>
-    
-    <div class="highlight-box">
-        <p><strong>Digital Marketing Relevance:</strong> TGR operates as a sub-brand that humanises the parent Toyota brand, using motorsport storytelling, driver personalities, and technical content to engage a passionate global community across Instagram, YouTube, TikTok, and its official website.</p>
-    </div>
-</section>
-
-<!-- SECTION 2: INSTAGRAM HISTORY -->
-<section id="history">
-    <h2>02 — Instagram History & Engagement Ladder</h2>
-    <div class="section-subtitle">Chaffey & Smith's Engagement Model</div>
-    
-    <p>TGR's official Instagram account (@toyotagazooracing) was established as the brand's primary visual storytelling platform, leveraging the image-first nature of Instagram to showcase high-octane motorsport content, behind-the-scenes team footage, and consumer GR vehicle launches (Instagram, 2025).</p>
-    
-    <img src="images/instagram-growth.png" alt="TGR Instagram growth over time" class="portfolio-image">
-    <div class="image-caption">Figure 1: Toyota Gazoo Racing Instagram account overview and follower growth</div>
-    
-    <h3>Applying Chaffey & Smith's Ladder of Engagement</h3>
-    <p>Chaffey and Smith (2022) propose a five-stage engagement ladder that maps how brands progressively build relationships with digital audiences. TGR's Instagram strategy demonstrates clear progression across all five rungs:</p>
-    
-    <img src="images/ladder-engagement.png" alt="Chaffey and Smith Ladder of Engagement applied to TGR" class="portfolio-image">
-    <div class="image-caption">Figure 2: TGR's application of Chaffey & Smith's Ladder of Engagement</div>
-    
-    <table>
-        <tr><th>Ladder Stage</th><th>TGR Instagram Execution</th></tr>
-        <tr><td><strong>1. Reach</strong></td><td>Hashtag campaigns (#GazooRacing, #GRgram), race-day live coverage, collaborations with drivers and influencers</td></tr>
-        <tr><td><strong>2. Act</strong></td><td>Swipe-up story CTAs, "Link in bio" product launches, interactive polls and quizzes during race weekends</td></tr>
-        <tr><td><strong>3. Convert</strong></td><td>Traffic funnelled to toyotagazooracing.com and regional Toyota dealer sites for GR model configurators</td></tr>
-        <tr><td><strong>4. Engage</strong></td><td>Reposting user-generated content under #GRgram, replying to comments, driver Q&A sessions</td></tr>
-        <tr><td><strong>5. Advocate</strong></td><td>Owner communities sharing GR Yaris/Corolla builds, track-day events creating brand ambassadors</td></tr>
-    </table>
-</section>
-
-<!-- SECTION 3: FOUR ZONES -->
-<section id="zones">
-    <h2>03 — Four Zones of Social Media</h2>
-    <div class="section-subtitle">Tuten & Solomon (2020) Framework Analysis</div>
-    
-    <p>Tuten and Solomon (2020) classify social media activity into four interconnected zones: Community, Publishing, Entertainment, and Commerce. TGR's digital ecosystem demonstrates strategic presence across all four zones, with clear strengths in Community and Entertainment.</p>
-    
-    <img src="images/four-zones.png" alt="Four Zones of Social Media applied to TGR" class="portfolio-image">
-    <div class="image-caption">Figure 3: Tuten & Solomon's Four Zones framework applied to Toyota Gazoo Racing</div>
-    
-    <h4>Zone 1 — Social Community</h4>
-    <p>TGR cultivates an active global community through Instagram comment threads, Facebook fan groups, and YouTube subscribers. The #GRgram hashtag has created a self-sustaining community where owners share builds, track days, and modifications, generating organic advocacy (Meta, 2025).</p>
-    
-    <h4>Zone 2 — Social Publishing</h4>
-    <p>Long-form race recaps on YouTube, technical articles on the TGR website, and driver blog posts position TGR as an authoritative motorsport publisher. Instagram Reels serve as condensed publishing snippets driving traffic to long-form content.</p>
-    
-    <h4>Zone 3 — Social Entertainment</h4>
-    <p>Race highlight reels, onboard camera footage, and driver vlogs deliver high-adrenaline entertainment content. TGR's integration with gaming (Gran Turismo partnerships) bridges motorsport entertainment with virtual experiences.</p>
-    
-    <h4>Zone 4 — Social Commerce</h4>
-    <p><strong>This is TGR's weakest zone.</strong> Unlike competitors such as F1 teams or Porsche Motorsport, TGR lacks a direct e-commerce store linked from Instagram. Merchandise, model configurators, and parts must be accessed through third-party Toyota dealer networks, creating friction in the customer journey.</p>
-</section>
-
-<!-- SECTION 4: LIKERT SCALE WEBSITE EVALUATION -->
-<section id="likert">
-    <h2>04 — Website Evaluation (Likert Scale)</h2>
-    <div class="section-subtitle">toyotagazooracing.com — 15 Criteria Assessment</div>
-    
-    <p>The following evaluation assesses <a href="https://toyotagazooracing.com" target="_blank">toyotagazooracing.com</a> against 15 website usability and digital marketing criteria, rated on a 5-point Likert scale (1 = Strongly Disagree, 5 = Strongly Agree).</p>
-    
-    <table>
-        <tr><th>#</th><th>Criterion</th><th>Score (1–5)</th><th>Justification</th></tr>
-        <tr><td>1</td><td>Visual design reflects brand identity</td><td>5</td><td>Bold red/black palette, high-quality motorsport imagery</td></tr>
-        <tr><td>2</td><td>Navigation is intuitive and clear</td><td>4</td><td>Clear top menu, but some deep links require multiple clicks</td></tr>
-        <tr><td>3</td><td>Mobile responsive design</td><td>4</td><td>Works well on mobile, minor image-loading lag</td></tr>
-        <tr><td>4</td><td>Fast page load speed</td><td>3</td><td>Video-heavy pages slow on weaker connections</td></tr>
-        <tr><td>5</td><td>Content is current and regularly updated</td><td>5</td><td>Race-day updates and news refreshed continuously</td></tr>
-        <tr><td>6</td><td>Clear calls-to-action (CTAs)</td><td>3</td><td>CTAs exist but are visually understated</td></tr>
-        <tr><td>7</td><td>Strong social media integration</td><td>4</td><td>Icons present, Instagram feed embedded on homepage</td></tr>
-        <tr><td>8</td><td>Accessibility features (alt text, contrast)</td><td>3</td><td>Good contrast; alt text inconsistent</td></tr>
-        <tr><td>9</td><td>Multimedia content (video, interactive)</td><td>5</td><td>Rich video library, 360° car views, race highlights</td></tr>
-        <tr><td>10</td><td>E-commerce / product purchase flow</td><td>2</td><td>No direct merchandise store; redirects to dealers</td></tr>
-        <tr><td>11</td><td>Search functionality</td><td>3</td><td>Basic search; lacks filters and predictive suggestions</td></tr>
-        <tr><td>12</td><td>Multilingual support</td><td>4</td><td>English, Japanese, regional EU sites available</td></tr>
-        <tr><td>13</td><td>Lead generation / newsletter sign-up</td><td>3</td><td>Newsletter exists but not prominently placed</td></tr>
-        <tr><td>14</td><td>SEO optimisation (meta, structure)</td><td>4</td><td>Strong organic ranking for "GR Yaris", "Toyota WRC"</td></tr>
-        <tr><td>15</td><td>Overall user experience</td><td>4</td><td>Engaging and premium, but commerce gaps reduce utility</td></tr>
-    </table>
-    
-    <div class="score-box">TOTAL SCORE: 53 / 75 (70.6%)</div>
-    
-    <div class="highlight-box">
-        <p><strong>Evaluation Summary:</strong> TGR's website excels in brand storytelling, multimedia content, and visual identity but underperforms in e-commerce functionality, CTA prominence, and lead generation. The 70.6% score indicates a strong but improvable digital presence.</p>
-    </div>
-</section>
-
-<!-- SECTION 5: UGC TRENDS -->
-<section id="ugc">
-    <h2>05 — UGC Trends & Hashtag Analysis</h2>
-    <div class="section-subtitle">Nielsen's 90-9-1 Rule in Practice</div>
-    
-    <p>Nielsen (2025) proposes the 90-9-1 rule of online participation: 90% of users are passive lurkers, 9% contribute occasionally, and only 1% create the majority of user-generated content (UGC). TGR's hashtag ecosystem demonstrates this principle vividly.</p>
-    
-    <img src="images/hashtag-search.png" alt="Instagram hashtag search for GazooRacing" class="portfolio-image">
-    <div class="image-caption">Figure 4: Instagram hashtag search showing #GazooRacing and related tags</div>
-    
-    <h3>Hashtag Performance Comparison</h3>
-    <table>
-        <tr><th>Hashtag</th><th>Estimated Posts</th><th>Primary Content Type</th></tr>
-        <tr><td>#GazooRacing</td><td>1.2M+</td><td>Official race content, brand posts</td></tr>
-        <tr><td>#GRgram</td><td>85K+</td><td>Owner builds, track days, modifications</td></tr>
-        <tr><td>#GRYaris</td><td>450K+</td><td>Owner photography, reviews</td></tr>
-        <tr><td>#ToyotaGR</td><td>320K+</td><td>Mixed owner and dealer content</td></tr>
-    </table>
-    
-    <img src="images/grgram-posts.png" alt="GRgram user-generated content posts" class="portfolio-image">
-    <div class="image-caption">Figure 5: #GRgram user-generated content showcasing owner community</div>
-    
-    <h3>Applying the 90-9-1 Rule to TGR</h3>
-    <ul>
-        <li><strong>90% Lurkers:</strong> Instagram followers who view stories and scroll feed without interacting — still valuable for reach and brand awareness</li>
-        <li><strong>9% Contributors:</strong> Users who like, comment, and share TGR posts — the engagement backbone driving algorithmic visibility</li>
-        <li><strong>1% Creators:</strong> Owners posting under #GRgram, modifying cars, creating content — these are TGR's most valuable brand advocates</li>
-    </ul>
-    
-    <div class="highlight-box">
-        <p><strong>Strategic Insight:</strong> TGR's #GRgram hashtag effectively converts the 1% creators into unpaid brand ambassadors. However, the gap between #GazooRacing (1.2M) and #GRgram (85K) reveals an opportunity to more actively encourage the 9% contributors to escalate into creators through reposts, features, and owner spotlights.</p>
-    </div>
-</section>
-
-<!-- SECTION 6: RECOMMENDATIONS -->
-<section id="recommendations">
-    <h2>06 — Strategic Recommendations</h2>
-    <div class="section-subtitle">Evidence-Based Digital Marketing Improvements</div>
-    
-    <h3>Recommendation 1: Launch Integrated E-Commerce Platform</h3>
-    <p>The Likert evaluation (Section 4) identified e-commerce as TGR's weakest website criterion (2/5). Smith (2024) emphasises that direct-to-consumer commerce is now a baseline expectation for premium brands. TGR should:</p>
-    <ul>
-        <li>Launch a branded merchandise store linked directly from Instagram Shop</li>
-        <li>Integrate GR parts and accessories configurator into toyotagazooracing.com</li>
-        <li>Enable Instagram Checkout for exclusive limited-edition drops</li>
-    </ul>
-    
-    <h3>Recommendation 2: Activate Dialogic Loops in Social Publishing</h3>
-    <p>Kent and Taylor's (1998) dialogic communication theory argues brands must create two-way conversation loops. TGR's current publishing is largely one-directional. Improvements include:</p>
-    <ul>
-        <li>Weekly "Ask the Driver" Instagram Live sessions</li>
-        <li>Polls and questions in every Story sequence</li>
-        <li>Dedicated community manager responding within 1 hour during race weekends</li>
-    </ul>
-    
-    <h3>Recommendation 3: Amplify the 1% Creator Tier</h3>
-    <p>Based on Nielsen's 90-9-1 rule (Section 5), TGR should invest in converting active commenters (9%) into content creators (1%) through:</p>
-    <ul>
-        <li>Monthly "#GRgram Owner of the Month" feature with prize incentives</li>
-        <li>Official creator program with early-access to GR launches</li>
-        <li>Hashtag campaign challenges (e.g., #MyGRstory)</li>
-    </ul>
-    
-    <h3>Recommendation 4: Strengthen Social Commerce Zone (Tuten & Solomon)</h3>
-    <p>The Four Zones analysis (Section 3) identified Commerce as TGR's weakest zone. By integrating shoppable posts, live-stream commerce during race weekends, and AR try-on for merchandise, TGR can close this strategic gap.</p>
-    
-    <div class="highlight-box">
-        <p><strong>Expected Outcome:</strong> Implementing these recommendations would elevate TGR's Likert score from 53/75 to an estimated 65+/75, directly address the Four Zones commerce gap, and create a self-reinforcing UGC flywheel that compounds organic reach over time.</p>
-    </div>
-</section>
-
-<!-- SECTION 7: REFERENCES -->
-<section id="references">
-    <h2>07 — References</h2>
-    <div class="section-subtitle">Harvard Referencing Style</div>
-    
-    <ul class="references-list">
-        <li>Chaffey, D. and Smith, P.R. (2022) <em>Digital Marketing Excellence: Planning, Optimizing and Integrating Online Marketing</em>. 6th edn. London: Routledge.</li>
-        
-        <li>Instagram (2025) <em>Toyota Gazoo Racing (@toyotagazooracing) official profile</em>. Available at: https://www.instagram.com/toyotagazooracing/ (Accessed: 20 April 2025).</li>
-        
-        <li>Kent, M.L. and Taylor, M. (1998) 'Building dialogic relationships through the World Wide Web', <em>Public Relations Review</em>, 24(3), pp. 321–334.</li>
-        
-        <li>Meta (2025) <em>Instagram for Business: Hashtag and community tools</em>. Available at: https://business.instagram.com (Accessed: 18 April 2025).</li>
-        
-        <li>Nielsen, J. (2025) <em>The 90-9-1 Rule for Participation Inequality in Social Media and Online Communities</em>. Nielsen Norman Group. Available at: https://www.nngroup.com/articles/participation-inequality/ (Accessed: 19 April 2025).</li>
-        
-        <li>Smith, P.R. (2024) <em>SOSTAC® Guide to Your Perfect Digital Marketing Plan</em>. 7th edn. PR Smith Publishing. Available at: https://prsmith.org (Accessed: 15 April 2025).</li>
-        
-        <li>Statista (2025) <em>Toyota Motor Corporation — Global brand and motorsport division statistics</em>. Available at: https://www.statista.com (Accessed: 22 April 2025).</li>
-        
-        <li>Toyota Gazoo Racing (2025) <em>Official Toyota Gazoo Racing website</em>. Available at: https://toyotagazooracing.com (Accessed: 22 April 2025).</li>
-        
-        <li>Tuten, T.L. and Solomon, M.R. (2020) <em>Social Media Marketing</em>. 4th edn. London: SAGE Publications.</li>
-    </ul>
-</section>
-
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-    <p><strong>MKT3039 Digital Marketing E-Portfolio</strong></p>
-    <p>Minh Nguyen Duc &nbsp;|&nbsp; Student ID: 25831986 &nbsp;|&nbsp; University of Northampton &nbsp;|&nbsp; 2025/26</p>
-    <p style="margin-top: 15px; color: #555;">Toyota Gazoo Racing analysis — Academic use only</p>
-</footer>
-
-</body>
-</html>
